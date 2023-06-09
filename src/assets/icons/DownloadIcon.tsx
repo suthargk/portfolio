@@ -1,4 +1,4 @@
-const Download = () => {
+const DownloadIcon = () => {
   return (
     <svg
       style={{ verticalAlign: "bottom", marginLeft: "2px" }}
@@ -24,4 +24,4 @@ const Download = () => {
   );
 };
 
-export default Download;
+export default DownloadIcon;

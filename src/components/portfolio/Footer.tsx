@@ -1,5 +1,5 @@
 import { styled } from "../../../stitches.config";
-import LogoLight from "../../assets/icons/LogoLight";
+import LogoLight from "../../assets/icons/LogoLightIcon";
 import CustomLink from "../common/CustomLink";
 
 const footerList = [
@@ -50,6 +50,10 @@ const FooterContainer = styled("footer", {
   width: "70%",
   margin: "0 auto",
   padding: "30px 0",
+
+  "@lg": {
+    width: "80%",
+  },
 });
 
 const FooterList = styled("ul", {
@@ -75,6 +79,17 @@ const FooterCopyWrite = styled("div", {
     "& span": {
       fontWeight: "500",
     },
+  },
+
+  "& svg": {
+    "@xs": {
+      width: 25,
+      height: 25,
+    },
+  },
+
+  "@xs": {
+    fontSize: "12px",
   },
 });
 
