@@ -13,12 +13,28 @@ const AboutContainer = styled("div", {
 });
 const HeadingSecondary = styled("h2", {});
 
+const AboutContent = styled("div", {
+  display: "grid",
+  gridTemplateColumns: "repeat(2, 1fr)",
+  gap: "32px",
+  fontSize: "18px",
+  lineHeight: 1.8,
+  margin: "40px 0",
+});
+
+const ResumeLink = styled(CustomLink, {
+  backgroundColor: "hsl(226 70% 55.5%)",
+  color: "#fff",
+  padding: "12px 18px",
+  borderRadius: "10px",
+});
+
 const About = () => {
   return (
     <AboutSection id="about">
       <AboutContainer>
         <HeadingSecondary>About me</HeadingSecondary>
-        <div className="about-container--content">
+        <AboutContent>
           <div>
             I specialize in building responsive and interactive user interfaces
             using modern frontend frameworks such as React. I have a deep
@@ -38,15 +54,14 @@ const About = () => {
             collaborative environments, using version control systems like Git
             to manage codebase efficiently and collaborate with team members.
           </div>
-        </div>
-        <CustomLink
-          className="resume-download"
+        </AboutContent>
+        <ResumeLink
           href="https://drive.google.com/file/d/1FXvntEW_yScXeot7fPpnP_tYUCYRCscw/view?usp=drive_link"
           target="_blank"
         >
           Resume.pdf
           <Download />
-        </CustomLink>
+        </ResumeLink>
       </AboutContainer>
     </AboutSection>
   );

@@ -34,6 +34,15 @@ const HeroButton = styled(Button, {
   fontSize: "16px",
 });
 
+const TwitterLink = styled(CustomLink, {
+  display: "flex",
+  alignItems: "center",
+  gap: "2px",
+  borderRadius: "unset",
+  backgroundColor: "unset",
+  textDecoration: "underline",
+});
+
 const Hero = () => {
   useEffect(() => {
     const obsCallback = (entries) => {
@@ -41,9 +50,9 @@ const Hero = () => {
       const header = document.querySelector("#header");
 
       if (!entry.isIntersecting) {
-        header.setAttribute("data-active", "true");
+        header?.setAttribute("data-active", "true");
       } else {
-        header.setAttribute("data-active", "false");
+        header?.setAttribute("data-active", "false");
       }
     };
     const obsOPtion = {
@@ -85,21 +94,10 @@ const Hero = () => {
           </HeroButton>
         </div>
         <div style={{ display: "flex", alignItems: "center" }}>
-          <CustomLink
-            href="https://twitter.com/suthargk"
-            target="__blank"
-            css={{
-              display: "flex",
-              alignItems: "center",
-              gap: "2px",
-              borderRadius: "unset",
-              backgroundColor: "unset",
-              textDecoration: "underline",
-            }}
-          >
+          <TwitterLink href="https://twitter.com/suthargk" target="__blank">
             <Twitter />
             <span>@Suthargk</span>
-          </CustomLink>
+          </TwitterLink>
         </div>
       </Container>
     </HeroStyle>
