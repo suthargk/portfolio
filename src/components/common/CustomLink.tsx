@@ -6,7 +6,13 @@ const CustomLinkStyle = styled("a", {
   fontWeight: 600,
 });
 
-const CustomLink = ({ children, href = "#", ...rest }) => {
+interface MyComponentProps {
+  children: React.ReactNode;
+  href: string;
+  target: string;
+}
+
+const CustomLink = ({ children, href = "#", ...rest }: MyComponentProps) => {
   return (
     <CustomLinkStyle href={href} {...rest}>
       {children}
