@@ -22,6 +22,10 @@ const WorkContainer = styled("div", {
     backgroundRepeat: "repeat-y",
     left: "-15px",
   },
+
+  "@lg": {
+    width: "80%",
+  },
 });
 const HeadingSecondary = styled("h2", {});
 

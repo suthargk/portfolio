@@ -1,9 +1,8 @@
 import { styled } from "../../../stitches.config";
-import LogoLight from "../../assets/icons/LogoLight";
+import LogoLight from "../../assets/icons/LogoLightIcon";
 import SunIcon from "../../assets/icons/SunIcon";
 
 import Button from "../common/Button";
-import CustomLink from "../common/CustomLink";
 
 const Nav = styled("nav", {
   width: "70%",
@@ -12,6 +11,10 @@ const Nav = styled("nav", {
   justifyContent: "space-between",
   alignItems: "center",
   height: "inherit",
+
+  "@lg": {
+    width: "80%",
+  },
 });
 
 const HeaderStyle = styled("header", {

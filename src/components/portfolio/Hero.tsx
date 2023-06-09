@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { styled } from "../../../stitches.config";
-import Twitter from "../../assets/icons/Twitter";
+import TwitterIcon from "../../assets/icons/TwitterIcon";
 import Button from "../common/Button";
 import CustomLink from "../common/CustomLink";
 
@@ -11,6 +11,14 @@ const HeroStyle = styled("div", {
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
+
+  "@lg": {
+    width: "80%",
+  },
+
+  "@sm": {
+    height: "100vh",
+  },
 });
 
 const HeadingPrimary = styled("h1", {
@@ -95,7 +103,7 @@ const Hero = () => {
         </div>
         <div style={{ display: "flex", alignItems: "center" }}>
           <TwitterLink href="https://twitter.com/suthargk" target="__blank">
-            <Twitter />
+            <TwitterIcon />
             <span>@Suthargk</span>
           </TwitterLink>
         </div>

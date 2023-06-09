@@ -15,6 +15,15 @@ const WorkItemStyle = styled("li", {
   "&:not(:last-child)": {
     marginBottom: "50px",
   },
+
+  "@md": {
+    gridTemplateColumns: "1.5fr 1fr",
+    gap: "20px",
+  },
+
+  "@sm": {
+    gridTemplateColumns: "1fr",
+  },
 });
 const WorkDescription = styled("span", {
   color: "$gray12",
