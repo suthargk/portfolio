@@ -1,4 +1,4 @@
-const LogoLight = ({ size }: { size: number }) => {
+const LogoLightIcon = ({ size }: { size: number }) => {
   return (
     <svg
       width={size}
@@ -17,4 +17,4 @@ const LogoLight = ({ size }: { size: number }) => {
   );
 };
 
-export default LogoLight;
+export default LogoLightIcon;
