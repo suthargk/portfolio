@@ -43,7 +43,7 @@ const SunButton = styled(Button, {
     boxShadow: "0 2px 40px -4px hsl(226 75.4% 74.5%)",
   },
 
-  "& svg": {
+  "&:hover svg": {
     color: "hsl(226 70% 55.5%)",
   },
 });
