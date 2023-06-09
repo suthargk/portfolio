@@ -89,15 +89,7 @@ const FooterLink = styled(CustomLink, {
   },
 });
 
-interface FooterLinkProps {
-  footer: {
-    path: string;
-    name: string;
-    target: boolean;
-  };
-}
-
-const FooterItem = ({ footer: { path, target, name } }: FooterLinkProps) => {
+const FooterItem = ({ footer: { path, target, name } }) => {
   return (
     <FooterItemStyle>
       <FooterLink href={path} target={target ? "_blank" : ""}>
