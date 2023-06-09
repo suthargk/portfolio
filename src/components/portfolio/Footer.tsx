@@ -58,7 +58,7 @@ const FooterList = styled("ul", {
   gap: "8px",
 });
 
-const FooterItem = styled("li", {
+const FooterItemStyle = styled("li", {
   listStyle: "none",
 });
 
@@ -78,17 +78,32 @@ const FooterCopyWrite = styled("div", {
   },
 });
 
-const FooterLink = ({ footer }) => {
+const FooterLink = styled(CustomLink, {
+  fontWeight: 400,
+  fontSize: "16px",
+  color: "hsl(0 0% 43.5%)",
+  transition: "all 0.3s",
+
+  "&:hover": {
+    color: "hsl(0 0% 9%)",
+  },
+});
+
+interface FooterLinkProps {
+  footer: {
+    path: string;
+    name: string;
+    target: boolean;
+  };
+}
+
+const FooterItem = ({ footer: { path, target, name } }: FooterLinkProps) => {
   return (
-    <FooterItem>
-      <CustomLink
-        className="footer_link"
-        href={footer.path}
-        target={footer.target ? "_blank" : ""}
-      >
-        {footer.name}
-      </CustomLink>
-    </FooterItem>
+    <FooterItemStyle>
+      <FooterLink href={path} target={target ? "_blank" : ""}>
+        {name}
+      </FooterLink>
+    </FooterItemStyle>
   );
 };
 
@@ -98,7 +113,7 @@ const Footer = () => {
       <FooterContainer>
         <FooterList>
           {footerList.map((footer) => {
-            return <FooterLink key={footer.id} footer={footer} />;
+            return <FooterItem key={footer.id} footer={footer} />;
           })}
         </FooterList>
 
