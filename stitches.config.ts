@@ -1,4 +1,4 @@
-import { gray } from "@radix-ui/colors";
+import { gray, blue, indigo } from "@radix-ui/colors";
 import { createStitches } from "@stitches/react";
 
 export const {
@@ -12,8 +12,16 @@ export const {
   config,
 } = createStitches({
   theme: {
+    fonts: {
+      display:
+        "Wotfard, system-ui, -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif",
+      font2:
+        "system-ui, -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif",
+    },
     colors: {
       ...gray,
+      ...blue,
+      ...indigo,
     },
   },
   media: {
@@ -27,10 +35,28 @@ export const {
 });
 
 const injectGlobalStyles = globalCss({
+  "@font-face": {
+    fontWeight: 400,
+    fontStyle: "normal",
+    fontFamily: "Wotfard",
+    fontDisplay: "optional",
+    src: "url('/assets/fonts/Wotfard-Medium.ttf') format('ttf')",
+  },
   "*, *::after, *::before": {
     boxSizing: "border-box",
     padding: 0,
     margin: 0,
+  },
+  html: {
+    boxSizing: "border-box",
+  },
+  body: {
+    // font-family here
+    fontFamily: "$display",
+    scrollBehavior: "smooth",
+    MozOsxFontSmoothing: "grayscale",
+    WebkitFontSmoothing: "antialiased",
+    textRendering: "optimizeLegibility",
   },
 });
 
