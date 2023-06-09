@@ -30,6 +30,14 @@ const HeaderStyle = styled("header", {
     backgroundColor: "hsl(0 0% 99%, 0.1)",
     height: "70px",
     border: "1px solid hsl(0 0% 95.1%)",
+
+    "@xs": {
+      height: "60px",
+    },
+  },
+
+  "@xs": {
+    height: "80px",
   },
 });
 
