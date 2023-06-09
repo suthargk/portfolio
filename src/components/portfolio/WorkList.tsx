@@ -2,10 +2,19 @@ import { styled } from "../../../stitches.config";
 import CustomLink from "../common/CustomLink";
 import { workList } from "./utils";
 
-const WorkListStyle = styled("ul", {});
+const WorkListStyle = styled("ul", {
+  margin: "40px 0",
+});
 
 const WorkItemStyle = styled("li", {
   listStyle: "none",
+  display: "grid",
+  gridTemplateColumns: "2fr 0.8fr",
+  gap: "10px",
+
+  "&:not(:last-child)": {
+    marginBottom: "50px",
+  },
 });
 const WorkDescription = styled("span", {
   color: "$gray12",
@@ -47,9 +56,18 @@ const Image = styled("img", {
   objectFit: "cover",
 });
 
-const WorkItem = ({ item }) => {
+interface WorkItemProps {
+  item: {
+    path: string;
+    name: string;
+    description: string;
+    imgSrc: string;
+  };
+}
+
+const WorkItem = ({ item }: WorkItemProps) => {
   return (
-    <WorkItemStyle className="work-item">
+    <WorkItemStyle>
       <CustomLink href={item.path} target="_blank">
         <span style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
           <WorkTitle>{item.name}</WorkTitle>

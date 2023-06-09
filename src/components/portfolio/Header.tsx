@@ -1,8 +1,9 @@
 import { styled } from "../../../stitches.config";
 import LogoLight from "../../assets/icons/LogoLight";
-import Sun from "../../assets/icons/Sun";
+import SunIcon from "../../assets/icons/SunIcon";
 
 import Button from "../common/Button";
+import CustomLink from "../common/CustomLink";
 
 const Nav = styled("nav", {
   width: "70%",
@@ -18,7 +19,33 @@ const HeaderStyle = styled("header", {
   top: 0,
   zIndex: 10,
   width: "100%",
-  height: "100px",
+  height: "120px",
+  transition: "height 0.2s",
+
+  "&[data-active='true']": {
+    backdropFilter: "blur(8px)",
+    backgroundColor: "hsl(0 0% 99%, 0.1)",
+    height: "70px",
+    border: "1px solid hsl(0 0% 95.1%)",
+  },
+});
+
+const SunButton = styled(Button, {
+  outline: "2px solid transparent",
+  transition: "all 0.2s ease-out",
+  backgroundColor: "hsl(210 16.7% 97.6%)",
+  padding: "10px",
+
+  "&:hover": {
+    outline: "2px solid hsl(226 70% 55.5%)",
+    transform: "scale(0.95)",
+    padding: "8px",
+    boxShadow: "0 2px 40px -4px hsl(226 75.4% 74.5%)",
+  },
+
+  "&:hover svg": {
+    color: "hsl(226 70% 55.5%)",
+  },
 });
 
 const Header = () => {
@@ -28,12 +55,9 @@ const Header = () => {
         <a href="#">
           <LogoLight size={40} />
         </a>
-        <Button
-          className="light-mode--button"
-          style={{ backgroundColor: "hsl(210 16.7% 97.6%)", padding: "10px" }}
-        >
-          <Sun />
-        </Button>
+        <SunButton>
+          <SunIcon />
+        </SunButton>
       </Nav>
     </HeaderStyle>
   );
