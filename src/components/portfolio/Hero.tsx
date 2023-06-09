@@ -41,9 +41,9 @@ const Hero = () => {
       const header = document.querySelector("#header");
 
       if (!entry.isIntersecting) {
-        header.setAttribute("data-active", "true");
+        header?.setAttribute("data-active", "true");
       } else {
-        header.setAttribute("data-active", "false");
+        header?.setAttribute("data-active", "false");
       }
     };
     const obsOPtion = {
