@@ -25,9 +25,10 @@ export const {
     },
   },
   media: {
-    sm: "(min-width: 640px)",
-    md: "(min-width: 768px)",
-    lg: "(min-width: 1024px)",
+    xs: "(max-width: 430px)",
+    sm: "(max-width: 640px)",
+    md: "(max-width: 768px)",
+    lg: "(max-width: 1024px)",
   },
   utils: {
     marginX: (value) => ({ marginLeft: value, marginRight: value }),

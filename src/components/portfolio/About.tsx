@@ -1,5 +1,5 @@
 import { styled } from "../../../stitches.config";
-import Download from "../../assets/icons/Download";
+import DownloadIcon from "../../assets/icons/DownloadIcon";
 import CustomLink from "../common/CustomLink";
 
 const AboutSection = styled("section", {
@@ -10,6 +10,10 @@ const AboutSection = styled("section", {
 const AboutContainer = styled("div", {
   width: "70%",
   margin: "0 auto",
+
+  "@lg": {
+    width: "80%",
+  },
 });
 const HeadingSecondary = styled("h2", {});
 
@@ -20,6 +24,10 @@ const AboutContent = styled("div", {
   fontSize: "18px",
   lineHeight: 1.8,
   margin: "40px 0",
+
+  "@md": {
+    gridTemplateColumns: "repeat(1, 1fr)",
+  },
 });
 
 const ResumeLink = styled(CustomLink, {
@@ -60,7 +68,7 @@ const About = () => {
           target="_blank"
         >
           Resume.pdf
-          <Download />
+          <DownloadIcon />
         </ResumeLink>
       </AboutContainer>
     </AboutSection>
