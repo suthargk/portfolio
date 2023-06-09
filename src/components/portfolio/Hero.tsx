@@ -17,19 +17,39 @@ const HeroStyle = styled("div", {
   },
 
   "@sm": {
-    height: "100vh",
+    height: "90vh",
   },
 });
 
 const HeadingPrimary = styled("h1", {
   lineHeight: "1.6",
   fontSize: "34px",
+
+  "@xs": {
+    fontSize: "28px",
+  },
 });
 
 const Container = styled("div", {
-  marginTop: "40px",
   display: "flex",
   justifyContent: "space-between",
+  marginTop: "40px",
+
+  "@xs": {
+    flexDirection: "column",
+    justifyContent: "center",
+    gap: "10px",
+    marginTop: "20px",
+  },
+});
+
+const HeroButtonGroup = styled("div", {
+  display: "flex",
+  gap: "10px",
+
+  "@xs": {
+    flexDirection: "column",
+  },
 });
 
 const HeroButton = styled(Button, {
@@ -44,11 +64,25 @@ const HeroButton = styled(Button, {
 
 const TwitterLink = styled(CustomLink, {
   display: "flex",
-  alignItems: "center",
+
   gap: "2px",
   borderRadius: "unset",
   backgroundColor: "unset",
   textDecoration: "underline",
+
+  "@xs": {
+    width: "100%",
+    textAlign: "center",
+    justifyContent: "center",
+    marginTop: "50px",
+  },
+});
+
+const TwitterLinkContainer = styled("div", {
+  display: "flex",
+  alignItems: "center",
+
+  "@xs": { display: "none" },
 });
 
 const Hero = () => {
@@ -83,30 +117,30 @@ const Hero = () => {
         <span>I'm very enthusiastic about frontend technologies.</span>
       </HeadingPrimary>
       <Container>
-        <div style={{ display: "flex", gap: "10px" }}>
+        <HeroButtonGroup>
           <HeroButton
             onClick={() => {
               const aboutPage = document.querySelector("#about");
-              aboutPage?.scrollIntoView({ behavior: "smooth" });
+              aboutPage?.scrollIntoView({ behavior: "smooth", block: "start" });
             }}
           >
             About me
           </HeroButton>
           <HeroButton
             onClick={() => {
-              const aboutPage = document.querySelector("#work");
-              aboutPage?.scrollIntoView({ behavior: "smooth" });
+              const workPage = document.querySelector("#work");
+              workPage?.scrollIntoView({ behavior: "smooth", block: "start" });
             }}
           >
             Work
           </HeroButton>
-        </div>
-        <div style={{ display: "flex", alignItems: "center" }}>
+        </HeroButtonGroup>
+        <TwitterLinkContainer>
           <TwitterLink href="https://twitter.com/suthargk" target="__blank">
             <TwitterIcon />
             <span>@Suthargk</span>
           </TwitterLink>
-        </div>
+        </TwitterLinkContainer>
       </Container>
     </HeroStyle>
   );
