@@ -18,7 +18,7 @@ const HeaderStyle = styled("header", {
   top: 0,
   zIndex: 10,
   width: "100%",
-  height: "100px",
+  height: "120px",
 });
 
 const Header = () => {
