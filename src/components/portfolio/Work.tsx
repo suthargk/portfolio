@@ -1,10 +1,10 @@
-import { styled } from "../../../stitches.config";
+import { darkTheme, styled } from "../../../stitches.config";
 import WorkList from "./WorkList";
 
 const WorkSection = styled("section", {});
 
 const WorkContainer = styled("div", {
-  width: "70%",
+  width: "60%",
   margin: "0 auto",
   position: "relative",
   padding: "50px 0",
@@ -21,6 +21,11 @@ const WorkContainer = styled("div", {
     backgroundSize: "1px 10px",
     backgroundRepeat: "repeat-y",
     left: "-15px",
+
+    [`.${darkTheme} &`]: {
+      backgroundImage:
+        "linear-gradient($indigoDark1 50%, rgba(255,255,255,0) 0%)",
+    },
   },
 
   "@lg": {

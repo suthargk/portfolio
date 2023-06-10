@@ -1,5 +1,28 @@
-import { gray, blue, indigo } from "@radix-ui/colors";
+import {
+  gray,
+  blue,
+  blueDark,
+  indigo,
+  indigoDark,
+  grayDark,
+} from "@radix-ui/colors";
 import { createStitches } from "@stitches/react";
+
+const darkColors = {
+  blueDark,
+  indigoDark,
+  grayDark,
+};
+
+let obj = {};
+Object.values(darkColors).forEach((parentValues) => {
+  Object.keys(parentValues).forEach((key, index) => {
+    obj = {
+      ...obj,
+      [key.split(index + 1)[0] + "Dark" + (index + 1)]: parentValues[key],
+    };
+  });
+});
 
 export const {
   styled,
@@ -7,7 +30,6 @@ export const {
   globalCss,
   keyframes,
   getCssText,
-  theme,
   createTheme,
   config,
 } = createStitches({
@@ -22,6 +44,7 @@ export const {
       ...gray,
       ...blue,
       ...indigo,
+      ...obj,
     },
   },
   media: {
@@ -29,10 +52,17 @@ export const {
     sm: "(max-width: 640px)",
     md: "(max-width: 768px)",
     lg: "(max-width: 1024px)",
+    "prefers-color-scheme:": "dark",
   },
   utils: {
     marginX: (value) => ({ marginLeft: value, marginRight: value }),
   },
+});
+
+export const darkTheme = createTheme("dark-theme", {
+  colors: {},
+  space: {},
+  fonts: {},
 });
 
 const injectGlobalStyles = globalCss({
@@ -50,6 +80,7 @@ const injectGlobalStyles = globalCss({
   },
   html: {
     boxSizing: "border-box",
+    backgroundColor: "$universal",
   },
   body: {
     // font-family here
