@@ -8,7 +8,6 @@ const SunSvg = styled("svg", {
 const SunIcon = () => {
   return (
     <SunSvg
-      className="sun-icon"
       width="20"
       height="20"
       viewBox="0 0 24 24"
