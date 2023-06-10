@@ -1,11 +1,11 @@
 import { useEffect } from "react";
-import { styled } from "../../../stitches.config";
+import { darkTheme, styled } from "../../../stitches.config";
 import TwitterIcon from "../../assets/icons/TwitterIcon";
 import Button from "../common/Button";
 import CustomLink from "../common/CustomLink";
 
 const HeroStyle = styled("div", {
-  width: "70%",
+  width: "60%",
   margin: "0 auto",
   height: "80vh",
   display: "flex",
@@ -19,6 +19,8 @@ const HeroStyle = styled("div", {
   "@sm": {
     height: "90vh",
   },
+
+  [`.${darkTheme} &`]: {},
 });
 
 const HeadingPrimary = styled("h1", {

@@ -1,4 +1,4 @@
-import { styled } from "../../../stitches.config";
+import { darkTheme, styled } from "../../../stitches.config";
 import LogoLight from "../../assets/icons/LogoLightIcon";
 import CustomLink from "../common/CustomLink";
 
@@ -44,10 +44,13 @@ const footerList = [
 
 const FooterSection = styled("footer", {
   borderTop: `1px solid $gray4`,
+  [`.${darkTheme} &`]: {
+    borderTopColor: "$indigoDark1",
+  },
 });
 
 const FooterContainer = styled("footer", {
-  width: "70%",
+  width: "60%",
   margin: "0 auto",
   padding: "30px 0",
 
@@ -99,8 +102,16 @@ const FooterLink = styled(CustomLink, {
   color: "hsl(0 0% 43.5%)",
   transition: "all 0.3s",
 
+  [`.${darkTheme} &`]: {
+    color: "rgba(255,255,255, 0.8)",
+  },
+
   "&:hover": {
     color: "hsl(0 0% 9%)",
+
+    [`.${darkTheme} &`]: {
+      color: "#fff",
+    },
   },
 });
 

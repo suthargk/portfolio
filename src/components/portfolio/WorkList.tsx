@@ -1,4 +1,4 @@
-import { styled } from "../../../stitches.config";
+import { darkTheme, styled } from "../../../stitches.config";
 import CustomLink from "../common/CustomLink";
 import { workList } from "./utils";
 
@@ -28,6 +28,10 @@ const WorkItemStyle = styled("li", {
 const WorkDescription = styled("span", {
   color: "$gray12",
   fontSize: "18px",
+
+  [`.${darkTheme} &`]: {
+    color: "$grayDark12",
+  },
 });
 
 const WorkTitle = styled("span", {

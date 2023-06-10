@@ -1,14 +1,18 @@
-import { styled } from "../../../stitches.config";
+import { darkTheme, styled } from "../../../stitches.config";
 import DownloadIcon from "../../assets/icons/DownloadIcon";
 import CustomLink from "../common/CustomLink";
 
 const AboutSection = styled("section", {
   backgroundColor: "$blue2",
   padding: "50px 0",
+
+  [`.${darkTheme} &`]: {
+    backgroundColor: "$indigoDark1",
+  },
 });
 
 const AboutContainer = styled("div", {
-  width: "70%",
+  width: "60%",
   margin: "0 auto",
 
   "@lg": {
