@@ -68,7 +68,7 @@ const About = () => {
           </div>
         </AboutContent>
         <ResumeLink
-          href="https://drive.google.com/file/d/1DpLPAwttT2ssc6os7d8TuK4zAPBsTfoT/view?usp=sharing"
+          href="https://drive.google.com/file/d/1B09Qhw68MlkVRNSHfDng4s5j44yS4zD5/view?usp=drive_link"
           target="_blank"
         >
           Resume.pdf
