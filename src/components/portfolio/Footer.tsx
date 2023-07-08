@@ -17,8 +17,8 @@ const footerList = [
   },
   {
     id: 4,
-    name: "Work",
-    path: "#work",
+    name: "Project",
+    path: "#project",
     target: false,
   },
   {
