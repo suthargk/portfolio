@@ -5,6 +5,7 @@ import {
   indigo,
   indigoDark,
   grayDark,
+  orange,
 } from "@radix-ui/colors";
 import { createStitches } from "@stitches/react";
 
@@ -45,6 +46,7 @@ export const {
       ...blue,
       ...indigo,
       ...obj,
+      ...orange,
     },
   },
   media: {
@@ -52,6 +54,7 @@ export const {
     sm: "(max-width: 640px)",
     md: "(max-width: 768px)",
     lg: "(max-width: 1024px)",
+    xl: "(max-width: 1280px)",
     "prefers-color-scheme:": "dark",
   },
   utils: {

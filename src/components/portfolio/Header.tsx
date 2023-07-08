@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { darkTheme, styled } from "../../../stitches.config";
 import LogoLight from "../../assets/icons/LogoLightIcon";
 import SunIcon from "../../assets/icons/SunIcon";
 
 import Button from "../common/Button";
 import MoonIcon from "../../assets/icons/MoonIcon";
+import { setDarkModeFunc } from "./helper";
 
 const Nav = styled("nav", {
   width: "60%",
@@ -70,18 +71,19 @@ const SunButton = styled(Button, {
 });
 
 const Header = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(
+    JSON.parse(localStorage.getItem("isDarkMode")) || false
+  );
+
+  useEffect(() => {
+    window.localStorage.setItem("isDarkMode", JSON.stringify(darkMode));
+    setDarkModeFunc(darkMode, darkTheme);
+  }, [darkMode]);
 
   const handleDarkMode = () => {
-    if (darkMode) {
-      document.body.classList.remove(...document.body.classList);
-      document.body.style.backgroundColor = "unset";
-    } else {
-      document.body.classList.add(darkTheme);
-      document.body.style.backgroundColor = "#000";
-    }
-
+    setDarkModeFunc(darkMode, darkTheme);
     setDarkMode(!darkMode);
+    window.localStorage.setItem("isDarkMode", JSON.stringify(darkMode));
   };
 
   return (

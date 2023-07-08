@@ -130,11 +130,14 @@ const Hero = () => {
           </HeroButton>
           <HeroButton
             onClick={() => {
-              const workPage = document.querySelector("#work");
-              workPage?.scrollIntoView({ behavior: "smooth", block: "start" });
+              const ProjectPage = document.querySelector("#project");
+              ProjectPage?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
             }}
           >
-            Work
+            Project
           </HeroButton>
         </HeroButtonGroup>
         <TwitterLinkContainer>

@@ -1,12 +1,12 @@
 import { darkTheme, styled } from "../../../stitches.config";
 import CustomLink from "../common/CustomLink";
-import { workList } from "./utils";
+import { projectList } from "./utils";
 
-const WorkListStyle = styled("ul", {
+const ProjectListStyle = styled("ul", {
   margin: "40px 0",
 });
 
-const WorkItemStyle = styled("li", {
+const ProjectItemStyle = styled("li", {
   listStyle: "none",
   display: "grid",
   gridTemplateColumns: "2fr 0.8fr",
@@ -25,7 +25,7 @@ const WorkItemStyle = styled("li", {
     gridTemplateColumns: "1fr",
   },
 });
-const WorkDescription = styled("span", {
+const ProjectDescription = styled("span", {
   color: "$gray12",
   fontSize: "18px",
 
@@ -34,7 +34,7 @@ const WorkDescription = styled("span", {
   },
 });
 
-const WorkTitle = styled("span", {
+const ProjectTitle = styled("span", {
   fontSize: "15px",
   position: "relative",
 
@@ -69,7 +69,7 @@ const Image = styled("img", {
   objectFit: "cover",
 });
 
-interface WorkItemProps {
+interface ProjectItemProps {
   item: {
     path: string;
     name: string;
@@ -78,13 +78,13 @@ interface WorkItemProps {
   };
 }
 
-const WorkItem = ({ item }: WorkItemProps) => {
+const ProjectItem = ({ item }: ProjectItemProps) => {
   return (
-    <WorkItemStyle>
+    <ProjectItemStyle>
       <CustomLink href={item.path} target="_blank">
         <span style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-          <WorkTitle>{item.name}</WorkTitle>
-          <WorkDescription>{item.description}</WorkDescription>
+          <ProjectTitle>{item.name}</ProjectTitle>
+          <ProjectDescription>{item.description}</ProjectDescription>
         </span>
       </CustomLink>
       <Figure>
@@ -94,17 +94,17 @@ const WorkItem = ({ item }: WorkItemProps) => {
           </Picture>
         </CustomLink>
       </Figure>
-    </WorkItemStyle>
+    </ProjectItemStyle>
   );
 };
-const WorkList = () => {
+const ProjectList = () => {
   return (
-    <WorkListStyle className="work-list">
-      {workList.map((item) => {
-        return <WorkItem key={item.id} item={item} />;
+    <ProjectListStyle className="Project-list">
+      {projectList.map((item) => {
+        return <ProjectItem key={item.id} item={item} />;
       })}
-    </WorkListStyle>
+    </ProjectListStyle>
   );
 };
 
-export default WorkList;
+export default ProjectList;

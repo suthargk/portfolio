@@ -4,7 +4,9 @@ import About from "./About";
 import Footer from "./Footer";
 import Header from "./Header";
 import Hero from "./Hero";
-import Work from "./Work";
+import Project from "./Project";
+import Blog from "./Blog";
+import WhatIUses from "./WhatIUses";
 
 const Main = styled("main", {
   [`.${darkTheme} &`]: {
@@ -15,14 +17,16 @@ const Main = styled("main", {
 
 const PortFolio = () => {
   const ThemeContext = createContext("light");
-  const [theme, setTheme] = useState("light");
+  const [theme] = useState("light");
   return (
     <ThemeContext.Provider value={theme}>
       <Main>
         <Header />
         <Hero />
         <About />
-        <Work />
+        <Blog />
+        <WhatIUses />
+        <Project />
         <Footer />
       </Main>
     </ThemeContext.Provider>

@@ -1,9 +1,9 @@
 import { darkTheme, styled } from "../../../stitches.config";
-import WorkList from "./WorkList";
+import ProjectList from "./ProjectList";
 
-const WorkSection = styled("section", {});
+const ProjectSection = styled("section", {});
 
-const WorkContainer = styled("div", {
+const ProjectContainer = styled("div", {
   width: "60%",
   margin: "0 auto",
   position: "relative",
@@ -34,15 +34,15 @@ const WorkContainer = styled("div", {
 });
 const HeadingSecondary = styled("h2", {});
 
-const Work = () => {
+const Project = () => {
   return (
-    <WorkSection id="work">
-      <WorkContainer>
-        <HeadingSecondary>Work</HeadingSecondary>
-        <WorkList />
-      </WorkContainer>
-    </WorkSection>
+    <ProjectSection id="project">
+      <ProjectContainer>
+        <HeadingSecondary>Projects</HeadingSecondary>
+        <ProjectList />
+      </ProjectContainer>
+    </ProjectSection>
   );
 };
 
-export default Work;
+export default Project;
