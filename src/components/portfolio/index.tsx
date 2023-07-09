@@ -6,7 +6,7 @@ import Header from "./Header";
 import Hero from "./Hero";
 import Project from "./Project";
 import Blog from "./Blog";
-import WhatIUses from "./WhatIUses";
+// import WhatIUses from "./WhatIUses";
 
 const Main = styled("main", {
   [`.${darkTheme} &`]: {
@@ -23,9 +23,9 @@ const PortFolio = () => {
       <Main>
         <Header />
         <Hero />
-        <About />
         <Blog />
-        <WhatIUses />
+        <About />
+        {/* <WhatIUses /> */}
         <Project />
         <Footer />
       </Main>
