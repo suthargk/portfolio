@@ -4,10 +4,12 @@ import TwitterIcon from "../../assets/icons/TwitterIcon";
 import Button from "../common/Button";
 import CustomLink from "../common/CustomLink";
 
+const HeroWrapper = styled("section", {});
+
 const HeroStyle = styled("div", {
   width: "60%",
   margin: "0 auto",
-  height: "80vh",
+  height: "70vh",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -17,7 +19,8 @@ const HeroStyle = styled("div", {
   },
 
   "@sm": {
-    height: "90vh",
+    height: "80vh",
+    justifyContent: "flex-end",
   },
 
   [`.${darkTheme} &`]: {},
@@ -110,44 +113,51 @@ const Hero = () => {
   }, []);
 
   return (
-    <HeroStyle id="hero-page">
-      <HeadingPrimary>
-        <span style={{ color: "hsl(226 70.0% 55.5%)" }}>
-          Hello! I'm Gaurav Suthar 🤖{" "}
-        </span>
-        <span>, a frontend engineer 🧑‍💻 working with React ⚛️ and Redux. </span>
-        <span>I'm very enthusiastic about frontend technologies.</span>
-      </HeadingPrimary>
-      <Container>
-        <HeroButtonGroup>
-          <HeroButton
-            onClick={() => {
-              const aboutPage = document.querySelector("#about");
-              aboutPage?.scrollIntoView({ behavior: "smooth", block: "start" });
-            }}
-          >
-            About me
-          </HeroButton>
-          <HeroButton
-            onClick={() => {
-              const ProjectPage = document.querySelector("#project");
-              ProjectPage?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
-            }}
-          >
-            Project
-          </HeroButton>
-        </HeroButtonGroup>
-        <TwitterLinkContainer>
-          <TwitterLink href="https://twitter.com/suthargk" target="__blank">
-            <TwitterIcon />
-            <span>@Suthargk</span>
-          </TwitterLink>
-        </TwitterLinkContainer>
-      </Container>
-    </HeroStyle>
+    <HeroWrapper>
+      <HeroStyle id="hero-page">
+        <HeadingPrimary>
+          <span style={{ color: "hsl(226 70.0% 55.5%)" }}>
+            Hello! I'm Gaurav Suthar 🤖{" "}
+          </span>
+          <span>
+            , a frontend engineer 🧑‍💻 working with React ⚛️ and Redux.{" "}
+          </span>
+          <span>I'm very enthusiastic about frontend technologies.</span>
+        </HeadingPrimary>
+        <Container>
+          <HeroButtonGroup>
+            <HeroButton
+              onClick={() => {
+                const aboutPage = document.querySelector("#about");
+                aboutPage?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+              }}
+            >
+              About me
+            </HeroButton>
+            <HeroButton
+              onClick={() => {
+                const ProjectPage = document.querySelector("#project");
+                ProjectPage?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+              }}
+            >
+              Project
+            </HeroButton>
+          </HeroButtonGroup>
+          <TwitterLinkContainer>
+            <TwitterLink href="https://twitter.com/suthargk" target="__blank">
+              <TwitterIcon />
+              <span>@Suthargk</span>
+            </TwitterLink>
+          </TwitterLinkContainer>
+        </Container>
+      </HeroStyle>
+    </HeroWrapper>
   );
 };
 

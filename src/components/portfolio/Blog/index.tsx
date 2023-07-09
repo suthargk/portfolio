@@ -7,12 +7,16 @@ const BlogSection = styled("section", {
   //  backgroundColor: "$blue2",
 });
 const BlogContainer = styled("div", {
-  padding: "50px 0",
+  paddingBottom: "50px",
   width: "60%",
   margin: "0 auto",
 
   "@lg": {
     width: "80%",
+  },
+
+  "@sm": {
+    paddingTop: "50px",
   },
 });
 

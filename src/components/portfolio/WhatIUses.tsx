@@ -24,18 +24,28 @@ const WhatIUsesContainer = styled("div", {
 const Title = styled("li", {
   listStyle: "none",
   fontSize: "16px",
-  fontWeight: 500,
+  fontWeight: 600,
 });
 
 const HeadingSecondary = styled("h2", {});
 
 const Wrapper = styled("div", {
-  // display: "flex",
+  display: "flex",
+  flexWrap: "wrap",
+  marginTop: "20px",
+  justifyContent: "space-between",
+  gap: "20px",
 });
 
 const Item = styled("li", {
   listStyle: "none",
   color: "$indigo9",
+  flexGrow: 1,
+  paddingLeft: "20px",
+  display: "flex",
+  alignItems: "center",
+  gap: "10px",
+  fontWeight: "400",
 
   "&:not(:last-child)": {
     marginBottom: "10px",
@@ -55,6 +65,7 @@ const EmptySection = () => {
               <Item>
                 <ChevronArrow strokeWidth={4} />
                 <CustomLink
+                  style={{ fontWeight: 400 }}
                   href="https://www.apple.com/in/shop/buy-mac/macbook-air/13-inch-m1"
                   target="_blank"
                 >
@@ -64,6 +75,7 @@ const EmptySection = () => {
               <Item>
                 <ChevronArrow strokeWidth={4} />
                 <CustomLink
+                  style={{ fontWeight: 400 }}
                   href="https://www.apple.com/in/shop/product/MK2E3ZM/A/magic-mouse-white-multi-touch-surface"
                   target="_blank"
                 >
@@ -73,6 +85,7 @@ const EmptySection = () => {
               <Item>
                 <ChevronArrow strokeWidth={4} />
                 <CustomLink
+                  style={{ fontWeight: 400 }}
                   href="https://www.sony.co.in/electronics/headband-headphones/wh-1000xm4"
                   target="_blank"
                 >
@@ -82,6 +95,7 @@ const EmptySection = () => {
               <Item>
                 <ChevronArrow strokeWidth={4} />
                 <CustomLink
+                  style={{ fontWeight: 400 }}
                   href="https://www.apple.com/in/shop/product/MME73HN/A/airpods-3rd-generation-with-magsafe-charging-case"
                   target="_blank"
                 >
@@ -91,6 +105,7 @@ const EmptySection = () => {
               <Item>
                 <ChevronArrow strokeWidth={4} />
                 <CustomLink
+                  style={{ fontWeight: 400 }}
                   href="https://www.amazon.in/Monarch-Adjustable-Electric-Ergonomic-Sit-Stand/dp/B094RD5M2W"
                   target="_blank"
                 >
@@ -100,6 +115,7 @@ const EmptySection = () => {
               <Item>
                 <ChevronArrow strokeWidth={4} />
                 <CustomLink
+                  style={{ fontWeight: 400 }}
                   target="_blank"
                   href="https://www.amazon.in/SIHOO-Ergonomic-Adjustable-Armrests-Skin-Friendly/dp/B07GN4H96T"
                 >
@@ -109,11 +125,31 @@ const EmptySection = () => {
               <Item>
                 <ChevronArrow strokeWidth={4} />
                 <CustomLink
+                  style={{ fontWeight: 400 }}
                   href="https://www.playstation.com/en-in/ps4/"
                   target="_blank"
                 >
                   PS4 △○×□
                 </CustomLink>
+              </Item>
+            </ul>
+          </Title>
+
+          <Title>
+            Editor
+            <ul>
+              <Item>
+                <ChevronArrow strokeWidth={4} />
+                <span>Visual Studio Code</span>
+                <span></span>
+              </Item>
+              <Item>
+                <ChevronArrow strokeWidth={4} />
+                <span>Material Theme Ocean High Contrast</span>
+              </Item>
+              <Item>
+                <ChevronArrow strokeWidth={4} />
+                <span>Material Theme Icons</span>
               </Item>
             </ul>
           </Title>
@@ -162,25 +198,6 @@ const EmptySection = () => {
                   Unstyled, accessible components for building high‑quality
                   design systems and web apps in React.
                 </span>
-              </Item>
-            </ul>
-          </Title>
-
-          <Title>
-            Editor
-            <ul>
-              <Item>
-                <ChevronArrow strokeWidth={4} />
-                <span>Visual Studio Code</span>
-                <span></span>
-              </Item>
-              <Item>
-                <ChevronArrow strokeWidth={4} />
-                <span>Material Theme Ocean High Contrast</span>
-              </Item>
-              <Item>
-                <ChevronArrow strokeWidth={4} />
-                <span>Material Theme Icons</span>
               </Item>
             </ul>
           </Title>
