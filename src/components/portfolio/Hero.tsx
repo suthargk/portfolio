@@ -146,7 +146,7 @@ const Hero = () => {
                 });
               }}
             >
-              Project
+              Projects
             </HeroButton>
           </HeroButtonGroup>
           <TwitterLinkContainer>
