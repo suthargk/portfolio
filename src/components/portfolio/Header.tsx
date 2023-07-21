@@ -6,6 +6,8 @@ import SunIcon from "../../assets/icons/SunIcon";
 import Button from "../common/Button";
 import MoonIcon from "../../assets/icons/MoonIcon";
 import { setDarkModeFunc } from "./helper";
+import buttonSound from "../../assets/sounds/button.mp3";
+import useSound from "use-sound";
 
 const Nav = styled("nav", {
   width: "60%",
@@ -75,12 +77,15 @@ const Header = () => {
     JSON.parse(localStorage.getItem("isDarkMode")) || false
   );
 
+  const [play] = useSound(buttonSound);
+
   useEffect(() => {
     window.localStorage.setItem("isDarkMode", JSON.stringify(darkMode));
     setDarkModeFunc(darkMode, darkTheme);
   }, [darkMode]);
 
   const handleDarkMode = () => {
+    play();
     setDarkModeFunc(darkMode, darkTheme);
     setDarkMode(!darkMode);
     window.localStorage.setItem("isDarkMode", JSON.stringify(darkMode));
