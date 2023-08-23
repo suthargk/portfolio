@@ -10,7 +10,7 @@ const ProjectItemStyle = styled("li", {
   listStyle: "none",
   display: "grid",
   gridTemplateColumns: "2fr 0.8fr",
-  gap: "10px",
+  gap: "15px",
 
   "&:not(:last-child)": {
     marginBottom: "50px",
@@ -34,6 +34,12 @@ const ProjectDescription = styled("span", {
   },
 });
 
+const ProjectTitleContainer = styled("div", {
+  display: "flex",
+  gap: "20px",
+  alignItems: "center",
+});
+
 const ProjectTitle = styled("span", {
   fontSize: "15px",
   position: "relative",
@@ -47,6 +53,21 @@ const ProjectTitle = styled("span", {
     marginLeft: "-15px",
     position: "absolute",
     top: "10%",
+  },
+});
+
+const ProjectStatus = styled("div", {
+  padding: "4px 8px",
+  border: "1px  $indigo9",
+  borderRadius: "10px",
+  boxShadow: "0 0 8px 1px #3e63dd",
+  color: "black",
+  fontWeight: 500,
+  fontSize: "10px",
+
+  [`.${darkTheme} &`]: {
+    color: "$grayDark12",
+    boxShadow: "0 0 16px 1px #3e63dd",
   },
 });
 
@@ -83,7 +104,12 @@ const ProjectItem = ({ item }: ProjectItemProps) => {
     <ProjectItemStyle>
       <CustomLink href={item.path} target="_blank">
         <span style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-          <ProjectTitle>{item.name}</ProjectTitle>
+          <ProjectTitleContainer>
+            <ProjectTitle>{item.name}</ProjectTitle>
+            {item.status === 0 ? (
+              <ProjectStatus children="Coming Soon" />
+            ) : null}
+          </ProjectTitleContainer>
           <ProjectDescription>{item.description}</ProjectDescription>
         </span>
       </CustomLink>
