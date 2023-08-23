@@ -1,18 +1,28 @@
 import emoji_collection from "../../assets/images/emoji_collection.png";
 import spotify_app from "../../assets/images/spotify_app.png";
+import calendario from "../../assets/images/calendario.png";
 import yapsody_logo from "../../assets/images/yapsody-logo.png";
 import skull from "../../assets/images/skull.png";
 
 export const projectList = [
   {
     id: 1,
+    name: "Team Calendario",
+    description:
+      "Team Calendario is a Chrome extension where users manage events, set reminders, and stay organized while browsing the web.",
+    imgSrc: calendario,
+    path: "#",
+    status: 0,
+  },
+  {
+    id: 2,
     name: "Emoji collection",
     description: "Simple React app for searching emoji",
     imgSrc: emoji_collection,
     path: "https://emojicollection.netlify.app/",
   },
   {
-    id: 2,
+    id: 3,
     name: "Spotify App",
     description:
       "Build a Spotify responsive app using React, Tailwind and GraphQL",
