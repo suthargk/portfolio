@@ -137,7 +137,8 @@ const Footer = () => {
 
         <FooterCopyWrite>
           <p>
-            <span>© 2023 Gaurav Suthar&nbsp;</span> —— Frontend Engineer
+            <span>© {new Date().getFullYear()} Gaurav Suthar&nbsp;</span> ——
+            Frontend Engineer
           </p>
           <LogoLight size={30} />
         </FooterCopyWrite>
