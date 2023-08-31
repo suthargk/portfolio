@@ -1,7 +1,13 @@
 import PortFolio from "./components/portfolio";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
-  return <PortFolio />;
+  return (
+    <>
+      <Analytics />
+      <PortFolio />
+    </>
+  );
 }
 
 export default App;
