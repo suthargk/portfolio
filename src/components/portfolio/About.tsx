@@ -42,6 +42,7 @@ const ResumeLink = styled(CustomLink, {
 });
 
 const About = () => {
+  console.log("import.meta.env.BASE_URL", import.meta.env.VITE_APP_PATH);
   return (
     <AboutSection id="about">
       <AboutContainer>
@@ -68,7 +69,10 @@ const About = () => {
           </div>
         </AboutContent>
         <ResumeLink
-          href="https://drive.google.com/file/d/1bZbfAnyfOjGgjox0kBSNr1LSPZrBLog5/view?usp=sharing"
+          href={
+            import.meta.env.VITE_APP_PATH +
+            "/src/assets/gauravsuthar-resume.pdf"
+          }
           target="_blank"
         >
           Resume.pdf

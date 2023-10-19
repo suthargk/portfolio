@@ -11,7 +11,7 @@ export const projectList = [
     description:
       "Team Calendario is a Chrome extension where users manage events, set reminders, and stay organized while browsing the web.",
     imgSrc: calendario,
-    path: "#",
+    path: "calendario",
     status: 0,
   },
   {
@@ -19,7 +19,7 @@ export const projectList = [
     name: "Emoji collection",
     description: "Simple React app for searching emoji",
     imgSrc: emoji_collection,
-    path: "https://emojicollection.netlify.app/",
+    path: "https://emojicollection.netlify.app",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ export const projectList = [
     description:
       "Build a Spotify responsive app using React, Tailwind and GraphQL",
     imgSrc: spotify_app,
-    path: "https://spotifymusicappreact.netlify.app/",
+    path: "https://spotifymusicappreact.netlify.app",
   },
 ];
 

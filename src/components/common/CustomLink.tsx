@@ -4,6 +4,7 @@ const CustomLinkStyle = styled("a", {
   textDecoration: "none",
   color: "$indigo9",
   fontWeight: 600,
+  cursor: "pointer",
 });
 
 interface MyComponentProps {
