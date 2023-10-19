@@ -68,7 +68,7 @@ const About = () => {
             to manage codebase efficiently and collaborate with team members.
           </div>
         </AboutContent>
-        <ResumeLink href="/public/resume.pdf" target="_blank">
+        <ResumeLink href="/resume.pdf" target="_blank">
           Resume.pdf
           <DownloadIcon />
         </ResumeLink>
