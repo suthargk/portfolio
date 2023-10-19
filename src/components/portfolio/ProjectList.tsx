@@ -1,3 +1,4 @@
+import { redirect, useNavigate } from "react-router-dom";
 import { darkTheme, styled } from "../../../stitches.config";
 import CustomLink from "../common/CustomLink";
 import { projectList } from "./utils";
@@ -90,6 +91,13 @@ const Image = styled("img", {
   objectFit: "cover",
 });
 
+const ProjectContainer = styled("div", {
+  textDecoration: "none",
+  color: "$indigo9",
+  fontWeight: 600,
+  cursor: "pointer",
+});
+
 interface ProjectItemProps {
   item: {
     path: string;
@@ -100,9 +108,16 @@ interface ProjectItemProps {
 }
 
 const ProjectItem = ({ item }: ProjectItemProps) => {
+  const navigate = useNavigate();
   return (
     <ProjectItemStyle>
-      <CustomLink href={item.path} target="_blank">
+      <ProjectContainer
+        onClick={() =>
+          item.path === "calendario"
+            ? navigate(item.path)
+            : window.open(item.path)
+        }
+      >
         <span style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
           <ProjectTitleContainer>
             <ProjectTitle>{item.name}</ProjectTitle>
@@ -112,7 +127,7 @@ const ProjectItem = ({ item }: ProjectItemProps) => {
           </ProjectTitleContainer>
           <ProjectDescription>{item.description}</ProjectDescription>
         </span>
-      </CustomLink>
+      </ProjectContainer>
       <Figure>
         <CustomLink href={item.path} target="_blank">
           <Picture>
