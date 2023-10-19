@@ -68,13 +68,7 @@ const About = () => {
             to manage codebase efficiently and collaborate with team members.
           </div>
         </AboutContent>
-        <ResumeLink
-          href={
-            import.meta.env.VITE_APP_PATH +
-            "/src/assets/gauravsuthar-resume.pdf"
-          }
-          target="_blank"
-        >
+        <ResumeLink href="/src/assets/gauravsuthar-resume.pdf" target="_blank">
           Resume.pdf
           <DownloadIcon />
         </ResumeLink>
