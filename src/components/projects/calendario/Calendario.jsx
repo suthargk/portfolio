@@ -14,12 +14,12 @@ const CalendarioStyled = styled("div", {
   },
 });
 
-const Calendario = () => {
+function Calendario() {
   return (
     <CalendarioStyled>
       <Hero />
     </CalendarioStyled>
   );
-};
+}
 
 export default Calendario;

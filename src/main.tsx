@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import Calendario from "./components/projects/Calendario";
+import Calendario from "./components/Projects/Calendario/Calendario";
 
 const router = createBrowserRouter([
   {
