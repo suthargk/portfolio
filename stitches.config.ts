@@ -6,6 +6,7 @@ import {
   indigoDark,
   grayDark,
   orange,
+  violetDark,
 } from "@radix-ui/colors";
 import { createStitches } from "@stitches/react";
 
@@ -13,6 +14,7 @@ const darkColors = {
   blueDark,
   indigoDark,
   grayDark,
+  violetDark,
 };
 
 let obj = {};

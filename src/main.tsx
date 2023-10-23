@@ -3,18 +3,16 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import Calendario from "./components/projects/calendario";
+import Calendario from "./components/projects/Calendario";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    children: [
-      {
-        path: "calendario",
-        element: <Calendario />,
-      },
-    ],
+  },
+  {
+    path: "calendario",
+    element: <Calendario />,
   },
 ]);
 
