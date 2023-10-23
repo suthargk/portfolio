@@ -12,6 +12,7 @@ const ProjectItemStyle = styled("li", {
   display: "grid",
   gridTemplateColumns: "2fr 0.8fr",
   gap: "15px",
+  cursor: "pointer",
 
   "&:not(:last-child)": {
     marginBottom: "50px",
@@ -110,14 +111,14 @@ interface ProjectItemProps {
 const ProjectItem = ({ item }: ProjectItemProps) => {
   const navigate = useNavigate();
   return (
-    <ProjectItemStyle>
-      <ProjectContainer
-        onClick={() =>
-          item.path === "calendario"
-            ? navigate(item.path)
-            : window.open(item.path)
-        }
-      >
+    <ProjectItemStyle
+      onClick={() =>
+        item.path === "calendario"
+          ? navigate(item.path)
+          : window.open(item.path)
+      }
+    >
+      <ProjectContainer>
         <span style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
           <ProjectTitleContainer>
             <ProjectTitle>{item.name}</ProjectTitle>
@@ -129,11 +130,9 @@ const ProjectItem = ({ item }: ProjectItemProps) => {
         </span>
       </ProjectContainer>
       <Figure>
-        <CustomLink href={item.path} target="_blank">
-          <Picture>
-            <Image src={item.imgSrc} />
-          </Picture>
-        </CustomLink>
+        <Picture>
+          <Image src={item.imgSrc} />
+        </Picture>
       </Figure>
     </ProjectItemStyle>
   );

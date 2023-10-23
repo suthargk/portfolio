@@ -7,6 +7,13 @@ const HeroStyled = styled("div", {
   display: "flex",
   justifyContent: "space-evenly",
   alignItems: "center",
+
+  "@md": {
+    height: "auto",
+    flexDirection: "column",
+    margin: "80px 0",
+    gap: "50px",
+  },
 });
 const Heading = styled("h1", {
   fontSize: "50px",
@@ -84,10 +91,6 @@ const ProjectImageContainer = styled("div", {
   borderRadius: "10px",
   overflow: "hidden",
   height: "520px",
-
-  "@lg": {
-    display: "none",
-  },
 });
 
 const ProjectImage = styled("img", {
@@ -100,6 +103,10 @@ const HeadingContainer = styled("div", {
 
   "@md": {
     textAlign: "center",
+  },
+
+  "@lg": {
+    marginTop: 0,
   },
 });
 
