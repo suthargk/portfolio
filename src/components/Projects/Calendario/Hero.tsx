@@ -11,7 +11,7 @@ const HeroStyled = styled("div", {
   "@md": {
     height: "auto",
     flexDirection: "column",
-    margin: "80px 0",
+    padding: "80px 0",
     gap: "50px",
   },
 });

@@ -3,7 +3,7 @@ import Hero from "./Hero";
 import { styled } from "../../../../stitches.config";
 
 const CalendarioStyled = styled("div", {
-  backgroundColor: "black",
+  backgroundColor: "#000",
   padding: "0 80px",
   "@lg": {
     padding: "0 40px",
