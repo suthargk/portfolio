@@ -95,6 +95,7 @@ const ProjectImageContainer = styled("div", {
 
   "@md": {
     height: "auto",
+    maxWidth: "300px",
   },
 });
 
