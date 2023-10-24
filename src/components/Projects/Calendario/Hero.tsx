@@ -91,6 +91,7 @@ const ProjectImageContainer = styled("div", {
   borderRadius: "10px",
   overflow: "hidden",
   height: "520px",
+  lineHeight: 0,
 
   "@md": {
     height: "auto",
