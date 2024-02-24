@@ -1,6 +1,7 @@
-import React from "react";
-import { styled } from "../../../../stitches.config";
-import project_image from "../../../assets/images/project_image.png";
+import React from 'react';
+
+import { styled } from '../../../../stitches.config';
+import project_image from '../../../assets/images/project_image.png';
 
 const HeroStyled = styled("div", {
   height: "100vh",
@@ -120,6 +121,19 @@ const Hero = () => {
   return (
     <HeroStyled>
       <HeadingContainer>
+        <div
+          style={{
+            width: "max-content",
+            borderRadius: "20px",
+            color: "#fff",
+            background: "#ff6154",
+            padding: "2px 8px",
+            fontSize: "12px",
+            fontWeight: 600
+          }}
+        >
+          Coming soon
+        </div>
         <Heading>
           <HeadingMain>
             <HeadingMainPrimary>
