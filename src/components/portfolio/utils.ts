@@ -1,8 +1,9 @@
-import emoji_collection from "../../assets/images/emoji_collection.png";
-import spotify_app from "../../assets/images/spotify_app.png";
-import calendario from "../../assets/images/calendario.png";
-import yapsody_logo from "../../assets/images/yapsody-logo.png";
-import skull from "../../assets/images/skull.png";
+import calendario from '../../assets/images/calendario.png';
+import emoji_collection from '../../assets/images/emoji_collection.png';
+import hector_logo from '../../assets/images/hectorai_logo.png';
+import skull from '../../assets/images/skull.png';
+import spotify_app from '../../assets/images/spotify_app.png';
+import yapsody_logo from '../../assets/images/yapsody-logo.png';
 
 export const projectList = [
   {
@@ -35,6 +36,14 @@ export const projectList = [
 export const workList = [
   {
     id: 1,
+    company: "Hector AI",
+    logo: hector_logo,
+    position: "Frontend Engineer",
+    duration: "2023 — Present",
+    url: "https://www.hectorai.live/",
+  },
+  {
+    id: 2,
     company: "Yapsody India",
     logo: yapsody_logo,
     position: "Frontend Engineer",
@@ -42,7 +51,7 @@ export const workList = [
     url: "https://www.yapsody.com/ticketing/",
   },
   {
-    id: 2,
+    id: 3,
     company: "Freelance",
     logo: skull,
     position: "Full Stack Engineer",

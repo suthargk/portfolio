@@ -1,11 +1,15 @@
-import { darkTheme, styled } from "../../../../stitches.config";
-import DownArrow from "../../../assets/icons/DownArrow";
-import WorkIcon from "../../../assets/icons/WorkIcon";
-import CustomLink from "../../common/CustomLink";
-import WorkList from "./WorkList";
+import {
+  darkTheme,
+  styled,
+} from '../../../../stitches.config';
+import DownArrow from '../../../assets/icons/DownArrow';
+import WorkIcon from '../../../assets/icons/WorkIcon';
+import CustomLink from '../../common/CustomLink';
+import WorkList from './WorkList';
 
 const WorkContainer = styled("div", {
   width: "50%",
+  marginTop: "-28px",
   maxWidth: "400px",
   minWidth: "300px",
   border: `1px solid $gray4`,
