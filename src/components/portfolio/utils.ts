@@ -23,14 +23,14 @@ export const projectList = [
     imgSrc: emoji_collection,
     path: "https://emojicollection.netlify.app",
   },
-  {
-    id: 3,
-    name: "Spotify App",
-    description:
-      "Build a Spotify responsive app using React, Tailwind and GraphQL",
-    imgSrc: spotify_app,
-    path: "https://spotifymusicappreact.netlify.app",
-  },
+  // {
+  //   id: 3,
+  //   name: "Spotify App",
+  //   description:
+  //     "Build a Spotify responsive app using React, Tailwind and GraphQL",
+  //   imgSrc: spotify_app,
+  //   path: "https://spotifymusicappreact.netlify.app",
+  // },
 ];
 
 export const workList = [
