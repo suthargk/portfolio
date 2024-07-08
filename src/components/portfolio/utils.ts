@@ -1,9 +1,9 @@
-import calendario from '../../assets/images/calendario.png';
-import emoji_collection from '../../assets/images/emoji_collection.png';
-import hector_logo from '../../assets/images/hectorai_logo.png';
-import skull from '../../assets/images/skull.png';
-import spotify_app from '../../assets/images/spotify_app.png';
-import yapsody_logo from '../../assets/images/yapsody-logo.png';
+import calendario from "../../assets/images/calendario.png";
+import emoji_collection from "../../assets/images/emoji_collection.png";
+import hector_logo from "../../assets/images/hectorai_logo.png";
+import skull from "../../assets/images/skull.png";
+import spotify_app from "../../assets/images/spotify_app.png";
+import yapsody_logo from "../../assets/images/yapsody-logo.png";
 
 export const projectList = [
   {
@@ -23,14 +23,14 @@ export const projectList = [
     imgSrc: emoji_collection,
     path: "https://emojicollection.netlify.app",
   },
-  // {
-  //   id: 3,
-  //   name: "Spotify App",
-  //   description:
-  //     "Build a Spotify responsive app using React, Tailwind and GraphQL",
-  //   imgSrc: spotify_app,
-  //   path: "https://spotifymusicappreact.netlify.app",
-  // },
+  {
+    id: 3,
+    name: "Spotify App",
+    description:
+      "Build a Spotify responsive app using React, Tailwind and GraphQL",
+    imgSrc: spotify_app,
+    path: "https://samespace-spotify.vercel.app",
+  },
 ];
 
 export const workList = [
