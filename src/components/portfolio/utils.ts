@@ -1,9 +1,9 @@
 import calendario from "../../assets/images/calendario.png";
 import emoji_collection from "../../assets/images/emoji_collection.png";
 import hector_logo from "../../assets/images/hectorai_logo.png";
-import skull from "../../assets/images/skull.png";
 import spotify_app from "../../assets/images/spotify_app.png";
 import yapsody_logo from "../../assets/images/yapsody-logo.png";
+import connectwise_logo from "../../assets/images/connectwise_logo.jpeg";
 
 export const projectList = [
   {
@@ -36,27 +36,27 @@ export const projectList = [
 export const workList = [
   {
     id: 1,
-    company: "Hector AI",
-    logo: hector_logo,
-    position: "Frontend Engineer",
-    duration: "2023 — Present",
-    url: "https://www.hectorai.live/",
+    company: "Connectwise",
+    logo: connectwise_logo,
+    position: "Frontend Engineer II",
+    duration: "2024 - Present",
+    url: "https://www.connectwise.com",
   },
   {
     id: 2,
+    company: "Hector AI",
+    logo: hector_logo,
+    position: "Frontend Engineer",
+    duration: "2023 — 2024",
+    url: "https://www.hectorai.live/",
+  },
+  {
+    id: 3,
     company: "Yapsody India",
     logo: yapsody_logo,
     position: "Frontend Engineer",
     duration: "2022 — 2023",
     url: "https://www.yapsody.com/ticketing/",
-  },
-  {
-    id: 3,
-    company: "Freelance",
-    logo: skull,
-    position: "Full Stack Engineer",
-    duration: "2019 — 2021",
-    url: "",
   },
 ];
 
