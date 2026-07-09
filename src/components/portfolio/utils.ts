@@ -13,7 +13,6 @@ export const projectList = [
       "Team Calendario is a Chrome extension where users manage events, set reminders, and stay organized while browsing the web.",
     imgSrc: calendario,
     path: "calendario",
-    status: 0,
   },
 
   {
