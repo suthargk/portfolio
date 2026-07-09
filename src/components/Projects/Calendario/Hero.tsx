@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import { styled } from '../../../../stitches.config';
-import project_image from '../../../assets/images/project_image.png';
+import { styled } from "../../../../stitches.config";
+import project_image from "../../../assets/images/project_image.png";
 
 const HeroStyled = styled("div", {
   height: "100vh",
@@ -129,10 +129,10 @@ const Hero = () => {
             background: "#ff6154",
             padding: "2px 8px",
             fontSize: "12px",
-            fontWeight: 600
+            fontWeight: 600,
           }}
         >
-          Coming soon
+          It's live
         </div>
         <Heading>
           <HeadingMain>
@@ -149,7 +149,9 @@ const Hero = () => {
             you never miss an important date again.
           </HeadingDescription>
         </Heading>
-        <ExtensionLink href="">Add to Chrome - It's free</ExtensionLink>
+        <ExtensionLink href="https://chromewebstore.google.com/detail/team-calendario/bnmmigoiecilbkipdngjofpbpaoofnoi">
+          Add to Chrome - It's free
+        </ExtensionLink>
       </HeadingContainer>
 
       <ProjectImageContainer>
