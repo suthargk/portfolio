@@ -4,10 +4,27 @@ import Container from "./Container";
 import { EXTENSION_URL } from "./constants";
 
 const FooterOuter = styled("div", {
+  position: "relative",
   borderTop: "1px solid rgba(255,255,255,0.08)",
 });
 
+const FooterGlow = styled("div", {
+  position: "absolute",
+  bottom: "-90px",
+  left: "50%",
+  transform: "translateX(-50%)",
+  width: "min(820px, 92vw)",
+  height: "260px",
+  background:
+    "radial-gradient(closest-side, rgba(112,88,208,0.3) 0%, rgba(112,88,208,0.1) 45%, transparent 75%)",
+  filter: "blur(90px)",
+  pointerEvents: "none",
+  zIndex: 0,
+});
+
 const FooterInner = styled(Container, {
+  position: "relative",
+  zIndex: 1,
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
@@ -41,6 +58,7 @@ const FooterLink = styled("a", {
 const Footer = () => {
   return (
     <FooterOuter>
+      <FooterGlow />
       <FooterInner>
         <span>© {new Date().getFullYear()} Calendario — built by Gaurav Suthar</span>
         <Links>

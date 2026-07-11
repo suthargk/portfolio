@@ -8,6 +8,9 @@ import { styled } from "../../../../stitches.config";
 
 const CalendarioStyled = styled("div", {
   backgroundColor: "#000",
+  backgroundImage:
+    "radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px)",
+  backgroundSize: "26px 26px",
   padding: "0 80px",
   "@lg": {
     padding: "0 40px",

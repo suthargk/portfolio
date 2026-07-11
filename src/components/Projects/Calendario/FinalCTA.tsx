@@ -14,6 +14,8 @@ const Section = styled(Container, {
 });
 
 const Panel = styled("div", {
+  position: "relative",
+  overflow: "hidden",
   borderRadius: "28px",
   border: "1px solid rgba(255,255,255,0.1)",
   background:
@@ -23,6 +25,25 @@ const Panel = styled("div", {
   "@md": {
     padding: "50px 24px",
   },
+});
+
+const PanelGlow = styled("div", {
+  position: "absolute",
+  top: "-20px",
+  left: "50%",
+  transform: "translateX(-50%)",
+  width: "760px",
+  height: "340px",
+  background:
+    "radial-gradient(closest-side, rgba(112,88,208,0.35) 0%, rgba(112,88,208,0.12) 45%, transparent 75%)",
+  filter: "blur(90px)",
+  pointerEvents: "none",
+  zIndex: 0,
+});
+
+const PanelContent = styled("div", {
+  position: "relative",
+  zIndex: 1,
 });
 
 const Title = styled("h2", {
@@ -55,17 +76,20 @@ const FinalCTA = () => {
   return (
     <Section>
       <Panel>
-        <Title>Ready to stop switching tabs?</Title>
-        <Subtitle>
-          Add Calendario to Chrome and see your whole day — Google and
-          Outlook together — the moment you click the toolbar icon.
-        </Subtitle>
-        <ExtensionButton />
-        <BadgeRow>
-          <Badge icon="⭐">Free forever</Badge>
-          <Badge icon="🧩">Manifest V3</Badge>
-          <Badge icon="🔒">Privacy-first</Badge>
-        </BadgeRow>
+        <PanelGlow />
+        <PanelContent>
+          <Title>Ready to stop switching tabs?</Title>
+          <Subtitle>
+            Add Calendario to Chrome and see your whole day — Google and
+            Outlook together — the moment you click the toolbar icon.
+          </Subtitle>
+          <ExtensionButton />
+          <BadgeRow>
+            <Badge icon="⭐">Free forever</Badge>
+            <Badge icon="🧩">Manifest V3</Badge>
+            <Badge icon="🔒">Privacy-first</Badge>
+          </BadgeRow>
+        </PanelContent>
       </Panel>
     </Section>
   );

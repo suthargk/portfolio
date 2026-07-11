@@ -10,13 +10,20 @@ import settingsAppearance from "../../../assets/images/calendario-screenshots/se
 import settingsAccount from "../../../assets/images/calendario-screenshots/settings-account.png";
 
 import Container from "./Container";
+import GlowField from "./GlowField";
 import ScreenshotFrame from "./ScreenshotFrame";
 
+const SectionOuter = styled("div", {
+  position: "relative",
+});
+
 const Section = styled(Container, {
-  padding: "110px 0",
+  position: "relative",
+  zIndex: 1,
+  padding: "90px 0",
 
   "@md": {
-    padding: "70px 0",
+    padding: "60px 0",
   },
 });
 
@@ -27,7 +34,7 @@ const Row = styled("div", {
   gap: "70px",
 
   "&:not(:last-child)": {
-    marginBottom: "140px",
+    marginBottom: "115px",
   },
 
   "@lg": {
@@ -39,7 +46,7 @@ const Row = styled("div", {
     textAlign: "center",
 
     "&:not(:last-child)": {
-      marginBottom: "90px",
+      marginBottom: "75px",
     },
   },
 
@@ -281,11 +288,14 @@ const FeatureRow = ({ feature }: { feature: Feature }) => {
 
 const Features = () => {
   return (
-    <Section>
-      {features.map((feature) => (
-        <FeatureRow key={feature.title} feature={feature} />
-      ))}
-    </Section>
+    <SectionOuter>
+      <GlowField />
+      <Section>
+        {features.map((feature) => (
+          <FeatureRow key={feature.title} feature={feature} />
+        ))}
+      </Section>
+    </SectionOuter>
   );
 };
 
