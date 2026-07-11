@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import Hero from "./Hero";
 import NavBar from "./NavBar";
 import Features from "./Features";
@@ -22,6 +22,15 @@ const CalendarioStyled = styled("div", {
 });
 
 function Calendario() {
+  // ProjectList navigates here with react-router's client-side useNavigate,
+  // which doesn't reset scroll position on route change — if the portfolio
+  // was scrolled down to the Projects section, this page would otherwise
+  // mount already scrolled partway down. Run before paint so there's no
+  // visible jump.
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // The shared portfolio stitches config has no valid background token for
   // html/body, so they're transparent by default — the main portfolio only
   // looks right because its dark-mode toggle force-sets body's background,
