@@ -1,163 +1,227 @@
 import React from "react";
 
-import { styled } from "../../../../stitches.config";
-import project_image from "../../../assets/images/project_image.png";
+import { keyframes, styled } from "../../../../stitches.config";
+import homeLight from "../../../assets/images/calendario-screenshots/home-light.png";
+import Badge from "./Badge";
+import Container from "./Container";
+import ExtensionButton from "./ExtensionButton";
+import ScreenshotFrame from "./ScreenshotFrame";
 
-const HeroStyled = styled("div", {
-  height: "100vh",
+const HeroOuter = styled("div", {
+  position: "relative",
+  overflow: "hidden",
+});
+
+const Glow = styled("div", {
+  position: "absolute",
+  top: "-200px",
+  left: "50%",
+  transform: "translateX(-50%)",
+  width: "900px",
+  height: "500px",
+  background:
+    "radial-gradient(closest-side, rgba(112,88,208,0.35), transparent)",
+  pointerEvents: "none",
+  zIndex: 0,
+});
+
+const HeroStyled = styled(Container, {
+  position: "relative",
+  zIndex: 1,
+  minHeight: "calc(100vh - 74px)",
   display: "flex",
-  justifyContent: "space-evenly",
+  justifyContent: "space-between",
   alignItems: "center",
+  gap: "40px",
+  padding: "60px 0",
 
   "@md": {
-    height: "auto",
+    minHeight: "auto",
     flexDirection: "column",
-    padding: "80px 0",
+    padding: "60px 0 40px",
     gap: "50px",
   },
 });
-const Heading = styled("h1", {
-  fontSize: "50px",
-  userSelect: "none",
+
+const HeadingContainer = styled("div", {
+  maxWidth: "600px",
 
   "@md": {
-    fontSize: "40px",
     textAlign: "center",
+    maxWidth: "100%",
+  },
+});
+
+const pulse = keyframes({
+  "0%": { boxShadow: "0 0 0 0 rgba(52,211,153,0.55)" },
+  "70%": { boxShadow: "0 0 0 7px rgba(52,211,153,0)" },
+  "100%": { boxShadow: "0 0 0 0 rgba(52,211,153,0)" },
+});
+
+const LiveBadge = styled("div", {
+  display: "inline-flex",
+  alignItems: "center",
+  gap: "9px",
+  width: "max-content",
+  borderRadius: "999px",
+  color: "rgba(255,255,255,0.85)",
+  background: "rgba(255,255,255,0.05)",
+  border: "1px solid rgba(255,255,255,0.12)",
+  backdropFilter: "blur(8px)",
+  padding: "7px 16px 7px 12px",
+  fontSize: "13px",
+  fontWeight: 600,
+  marginBottom: "24px",
+
+  "@md": {
+    margin: "0 auto 24px",
+  },
+});
+
+const LiveDot = styled("span", {
+  width: "7px",
+  height: "7px",
+  borderRadius: "50%",
+  backgroundColor: "#34D399",
+  flexShrink: 0,
+  animation: `${pulse} 2s infinite`,
+});
+
+const Heading = styled("h1", {
+  fontSize: "52px",
+  lineHeight: 1.1,
+  userSelect: "none",
+
+  "@lg": {
+    fontSize: "44px",
+  },
+
+  "@md": {
+    fontSize: "38px",
   },
 
   "@xs": {
-    display: "30px",
+    fontSize: "32px",
   },
 });
-const HeadingMain = styled("span", {});
 
-const HeadingMainPrimary = styled("span", {
+const HeadingPrimary = styled("span", {
+  display: "block",
   background:
-    "linear-gradient(270deg,  rgb(248, 208, 255) 0%, rgb(255,255,255) 100%, rgb(24, 24, 27) 69.8568%)",
+    "linear-gradient(270deg, rgb(248, 208, 255) 0%, rgb(255,255,255) 100%, rgb(24, 24, 27) 69.8568%)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
 });
 
-const HeadingMainSecondary = styled("span", {
+const HeadingSecondary = styled("span", {
   color: "$grayDark12",
 });
 
-const HeadingMainTertiary = styled("span", {
+const HeadingTertiary = styled("span", {
   background:
-    "linear-gradient(340deg,  rgb(112, 88, 208) 4.08744%, rgb(248, 208, 255) 100%)",
+    "linear-gradient(340deg, rgb(112, 88, 208) 4.08744%, rgb(248, 208, 255) 100%)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
 });
 
-const HeadingDescription = styled("span", {
-  color: "#fff",
-  fontSize: "16px",
+const HeadingDescription = styled("p", {
+  color: "rgba(255,255,255,0.7)",
+  fontSize: "17px",
   fontWeight: 500,
-  width: "70%",
   display: "block",
-  marginTop: "15px",
-  lineHeight: "1.4",
+  marginTop: "20px",
+  lineHeight: "1.55",
+});
+
+const CTARow = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  gap: "16px",
+  marginTop: "34px",
+  flexWrap: "wrap",
 
   "@md": {
-    width: "100%",
+    justifyContent: "center",
   },
 });
 
-const ExtensionLink = styled("a", {
-  padding: "14px 18px",
-  display: "inline-block",
-  color: "#fff",
-  backgroundColor: "$violetDark8",
-  marginTop: "40px",
-  borderRadius: "50px",
-  fontWeight: 600,
-  fontSize: "18px",
-  textDecoration: "none",
-  transition: "all .3s",
-  textAlign: "center",
-
-  "@xs": {
-    width: "100%",
-  },
-
-  "&:hover": {
-    backgroundColor: "$violetDark9",
-    transform: "scale(1.1)",
-  },
+const FinePrint = styled("span", {
+  fontSize: "13px",
+  color: "rgba(255,255,255,0.45)",
+  fontWeight: 500,
 });
 
-const ProjectImageContainer = styled("div", {
-  display: "block",
-  minWidth: "300px",
-  borderRadius: "10px",
-  overflow: "hidden",
-  height: "520px",
-  lineHeight: 0,
+const BadgeRow = styled("div", {
+  display: "flex",
+  flexWrap: "wrap",
+  gap: "10px",
+  marginTop: "30px",
 
   "@md": {
-    height: "auto",
-    maxWidth: "300px",
+    justifyContent: "center",
   },
 });
 
-const ProjectImage = styled("img", {
-  width: "100%",
-  height: "100%",
-});
-
-const HeadingContainer = styled("div", {
-  marginTop: "-80px",
+const ImageSide = styled("div", {
+  minWidth: "260px",
+  maxWidth: "310px",
+  flexShrink: 0,
 
   "@md": {
-    textAlign: "center",
-  },
-
-  "@lg": {
-    marginTop: 0,
+    maxWidth: "250px",
   },
 });
 
 const Hero = () => {
   return (
-    <HeroStyled>
-      <HeadingContainer>
-        <div
-          style={{
-            width: "max-content",
-            borderRadius: "20px",
-            color: "#fff",
-            background: "#ff6154",
-            padding: "2px 8px",
-            fontSize: "12px",
-            fontWeight: 600,
-          }}
-        >
-          It's live
-        </div>
-        <Heading>
-          <HeadingMain>
-            <HeadingMainPrimary>
-              Transform your calendar experience
-            </HeadingMainPrimary>
-            <div>
-              <HeadingMainSecondary> with our </HeadingMainSecondary>
-              <HeadingMainTertiary>Chrome extension.</HeadingMainTertiary>
-            </div>
-          </HeadingMain>
-          <HeadingDescription>
-            This powerful Chrome extension simplifies your calendar and ensures
-            you never miss an important date again.
-          </HeadingDescription>
-        </Heading>
-        <ExtensionLink href="https://chromewebstore.google.com/detail/team-calendario/bnmmigoiecilbkipdngjofpbpaoofnoi">
-          Add to Chrome - It's free
-        </ExtensionLink>
-      </HeadingContainer>
+    <HeroOuter>
+      <Glow />
+      <HeroStyled>
+        <HeadingContainer>
+          <LiveBadge>
+            <LiveDot />
+            Live on the Chrome Web Store
+          </LiveBadge>
 
-      <ProjectImageContainer>
-        <ProjectImage src={project_image} />
-      </ProjectImageContainer>
-    </HeroStyled>
+          <Heading>
+            <HeadingPrimary>Every calendar,</HeadingPrimary>
+            <span>
+              <HeadingSecondary>in </HeadingSecondary>
+              <HeadingTertiary>one fast popup.</HeadingTertiary>
+            </span>
+          </Heading>
+
+          <HeadingDescription>
+            Calendario merges your Google Calendar and Outlook / Microsoft
+            365 calendar into a single toolbar popup — see what's next, join
+            a call, or respond to an invite without ever opening either
+            calendar app.
+          </HeadingDescription>
+
+          <CTARow>
+            <ExtensionButton />
+            <FinePrint>No account required · Works with Google &amp; Outlook</FinePrint>
+          </CTARow>
+
+          <BadgeRow>
+            <Badge icon="🔄">Google + Outlook sync</Badge>
+            <Badge icon="🌐">15 languages</Badge>
+            <Badge icon="🎨">7 accent themes</Badge>
+            <Badge icon="🔒">100% client-side</Badge>
+          </BadgeRow>
+        </HeadingContainer>
+
+        <ImageSide>
+          <ScreenshotFrame>
+            <img
+              src={homeLight}
+              alt="Calendario agenda popup showing today's meetings"
+              draggable={false}
+            />
+          </ScreenshotFrame>
+        </ImageSide>
+      </HeroStyled>
+    </HeroOuter>
   );
 };
 

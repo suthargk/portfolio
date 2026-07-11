@@ -1,5 +1,9 @@
 import React from "react";
 import Hero from "./Hero";
+import NavBar from "./NavBar";
+import Features from "./Features";
+import FinalCTA from "./FinalCTA";
+import Footer from "./Footer";
 import { styled } from "../../../../stitches.config";
 
 const CalendarioStyled = styled("div", {
@@ -17,7 +21,11 @@ const CalendarioStyled = styled("div", {
 function Calendario() {
   return (
     <CalendarioStyled>
+      <NavBar />
       <Hero />
+      <Features />
+      <FinalCTA />
+      <Footer />
     </CalendarioStyled>
   );
 }
