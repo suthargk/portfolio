@@ -3,13 +3,14 @@ import { styled } from "../../../../stitches.config";
 import Badge from "./Badge";
 import Container from "./Container";
 import ExtensionButton from "./ExtensionButton";
+import Reveal from "./Reveal";
 
 const Section = styled(Container, {
-  padding: "40px 0 120px",
+  padding: "40px 0 70px",
   textAlign: "center",
 
   "@md": {
-    padding: "20px 0 80px",
+    padding: "20px 0 50px",
   },
 });
 
@@ -78,17 +79,19 @@ const FinalCTA = () => {
       <Panel>
         <PanelGlow />
         <PanelContent>
-          <Title>Ready to stop switching tabs?</Title>
-          <Subtitle>
-            Add Calendario to Chrome and see your whole day — Google and
-            Outlook together — the moment you click the toolbar icon.
-          </Subtitle>
-          <ExtensionButton />
-          <BadgeRow>
-            <Badge icon="⭐">Free forever</Badge>
-            <Badge icon="🧩">Manifest V3</Badge>
-            <Badge icon="🔒">Privacy-first</Badge>
-          </BadgeRow>
+          <Reveal>
+            <Title>Ready to stop switching tabs?</Title>
+            <Subtitle>
+              Add Calendario to Chrome and see your whole day — Google and
+              Outlook together — the moment you click the toolbar icon.
+            </Subtitle>
+            <ExtensionButton />
+            <BadgeRow>
+              <Badge icon="⭐">Free forever</Badge>
+              <Badge icon="🧩">Manifest V3</Badge>
+              <Badge icon="🔒">Privacy-first</Badge>
+            </BadgeRow>
+          </Reveal>
         </PanelContent>
       </Panel>
     </Section>

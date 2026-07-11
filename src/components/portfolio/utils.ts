@@ -8,9 +8,9 @@ import connectwise_logo from "../../assets/images/connectwise_logo.jpeg";
 export const projectList = [
   {
     id: 1,
-    name: "Team Calendario",
+    name: "Calendario",
     description:
-      "Team Calendario is a Chrome extension where users manage events, set reminders, and stay organized while browsing the web.",
+      "Calendario is a Chrome extension where users manage events, set reminders, and stay organized while browsing the web.",
     imgSrc: calendario,
     path: "calendario",
   },

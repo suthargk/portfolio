@@ -11,6 +11,7 @@ import settingsAccount from "../../../assets/images/calendario-screenshots/setti
 
 import Container from "./Container";
 import GlowField from "./GlowField";
+import Reveal from "./Reveal";
 import ScreenshotFrame from "./ScreenshotFrame";
 
 const SectionOuter = styled("div", {
@@ -258,29 +259,33 @@ const FeatureRow = ({ feature }: { feature: Feature }) => {
   return (
     <Row reverse={feature.reverse}>
       <TextSide>
-        <Eyebrow>{feature.eyebrow}</Eyebrow>
-        <Title>{feature.title}</Title>
-        <Description>{feature.description}</Description>
-        <BulletList>
-          {feature.bullets.map((bullet) => (
-            <BulletItem key={bullet}>{bullet}</BulletItem>
-          ))}
-        </BulletList>
+        <Reveal>
+          <Eyebrow>{feature.eyebrow}</Eyebrow>
+          <Title>{feature.title}</Title>
+          <Description>{feature.description}</Description>
+          <BulletList>
+            {feature.bullets.map((bullet) => (
+              <BulletItem key={bullet}>{bullet}</BulletItem>
+            ))}
+          </BulletList>
+        </Reveal>
       </TextSide>
 
       <ImageSide>
-        {feature.secondaryImage ? (
-          <StackedBehind>
+        <Reveal delay={120}>
+          {feature.secondaryImage ? (
+            <StackedBehind>
+              <ScreenshotFrame>
+                <img src={feature.secondaryImage} alt="" aria-hidden="true" draggable={false} />
+              </ScreenshotFrame>
+            </StackedBehind>
+          ) : null}
+          <StackedFront>
             <ScreenshotFrame>
-              <img src={feature.secondaryImage} alt="" aria-hidden="true" draggable={false} />
+              <img src={feature.image} alt={feature.imageAlt} draggable={false} />
             </ScreenshotFrame>
-          </StackedBehind>
-        ) : null}
-        <StackedFront>
-          <ScreenshotFrame>
-            <img src={feature.image} alt={feature.imageAlt} draggable={false} />
-          </ScreenshotFrame>
-        </StackedFront>
+          </StackedFront>
+        </Reveal>
       </ImageSide>
     </Row>
   );

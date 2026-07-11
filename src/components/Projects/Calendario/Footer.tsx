@@ -10,11 +10,11 @@ const FooterOuter = styled("div", {
 
 const FooterGlow = styled("div", {
   position: "absolute",
-  bottom: "-90px",
+  bottom: "-30px",
   left: "50%",
   transform: "translateX(-50%)",
   width: "min(820px, 92vw)",
-  height: "260px",
+  height: "180px",
   background:
     "radial-gradient(closest-side, rgba(112,88,208,0.3) 0%, rgba(112,88,208,0.1) 45%, transparent 75%)",
   filter: "blur(90px)",

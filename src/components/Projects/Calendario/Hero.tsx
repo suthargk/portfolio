@@ -5,6 +5,7 @@ import homeLight from "../../../assets/images/calendario-screenshots/home-light.
 import Badge from "./Badge";
 import Container from "./Container";
 import ExtensionButton from "./ExtensionButton";
+import Reveal from "./Reveal";
 import ScreenshotFrame from "./ScreenshotFrame";
 
 const HeroOuter = styled("div", {
@@ -178,47 +179,59 @@ const Hero = () => {
       <Glow />
       <HeroStyled>
         <HeadingContainer>
-          <LiveBadge>
-            <LiveDot />
-            Live on the Chrome Web Store
-          </LiveBadge>
+          <Reveal>
+            <LiveBadge>
+              <LiveDot />
+              Live on the Chrome Web Store
+            </LiveBadge>
+          </Reveal>
 
-          <Heading>
-            <HeadingPrimary>Every calendar,</HeadingPrimary>
-            <span>
-              <HeadingSecondary>in </HeadingSecondary>
-              <HeadingTertiary>one fast popup.</HeadingTertiary>
-            </span>
-          </Heading>
+          <Reveal delay={80}>
+            <Heading>
+              <HeadingPrimary>Every calendar,</HeadingPrimary>
+              <span>
+                <HeadingSecondary>in </HeadingSecondary>
+                <HeadingTertiary>one fast popup.</HeadingTertiary>
+              </span>
+            </Heading>
+          </Reveal>
 
-          <HeadingDescription>
-            Calendario merges your Google Calendar and Outlook / Microsoft
-            365 calendar into a single toolbar popup — see what's next, join
-            a call, or respond to an invite without ever opening either
-            calendar app.
-          </HeadingDescription>
+          <Reveal delay={160}>
+            <HeadingDescription>
+              Calendario merges your Google Calendar and Outlook / Microsoft
+              365 calendar into a single toolbar popup — see what's next, join
+              a call, or respond to an invite without ever opening either
+              calendar app.
+            </HeadingDescription>
+          </Reveal>
 
-          <CTARow>
-            <ExtensionButton />
-            <FinePrint>No account required · Works with Google &amp; Outlook</FinePrint>
-          </CTARow>
+          <Reveal delay={240}>
+            <CTARow>
+              <ExtensionButton />
+              <FinePrint>No account required · Works with Google &amp; Outlook</FinePrint>
+            </CTARow>
+          </Reveal>
 
-          <BadgeRow>
-            <Badge icon="🔄">Google + Outlook sync</Badge>
-            <Badge icon="🌐">15 languages</Badge>
-            <Badge icon="🎨">7 accent themes</Badge>
-            <Badge icon="🔒">100% client-side</Badge>
-          </BadgeRow>
+          <Reveal delay={320}>
+            <BadgeRow>
+              <Badge icon="🔄">Google + Outlook sync</Badge>
+              <Badge icon="🌐">15 languages</Badge>
+              <Badge icon="🎨">7 accent themes</Badge>
+              <Badge icon="🔒">100% client-side</Badge>
+            </BadgeRow>
+          </Reveal>
         </HeadingContainer>
 
         <ImageSide>
-          <ScreenshotFrame>
-            <img
-              src={homeLight}
-              alt="Calendario agenda popup showing today's meetings"
-              draggable={false}
-            />
-          </ScreenshotFrame>
+          <Reveal delay={200}>
+            <ScreenshotFrame>
+              <img
+                src={homeLight}
+                alt="Calendario agenda popup showing today's meetings"
+                draggable={false}
+              />
+            </ScreenshotFrame>
+          </Reveal>
         </ImageSide>
       </HeroStyled>
     </HeroOuter>
