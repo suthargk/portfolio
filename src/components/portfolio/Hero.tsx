@@ -1,5 +1,7 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { darkTheme, styled } from "../../../stitches.config";
+import ChevronArrow from "../../assets/icons/ChevronArrow";
 import TwitterIcon from "../../assets/icons/TwitterIcon";
 import Button from "../common/Button";
 import CustomLink from "../common/CustomLink";
@@ -24,6 +26,53 @@ const HeroStyle = styled("div", {
   },
 
   [`.${darkTheme} &`]: {},
+});
+
+const AnnouncementBadge = styled(Link, {
+  display: "inline-flex",
+  alignItems: "center",
+  gap: "9px",
+  width: "max-content",
+  padding: "7px 14px 7px 8px",
+  borderRadius: "999px",
+  backgroundColor: "hsl(223 92.9% 95%)",
+  color: "hsl(226 70.0% 40%)",
+  fontSize: "14px",
+  fontWeight: 600,
+  textDecoration: "none",
+  marginBottom: "22px",
+  transition: "all .2s",
+
+  "&:hover": {
+    backgroundColor: "hsl(223 92.9% 90%)",
+
+    "& svg": {
+      transform: "translateX(2px)",
+    },
+  },
+
+  "& svg": {
+    transition: "transform .2s",
+  },
+
+  [`.${darkTheme} &`]: {
+    backgroundColor: "$indigoDark1",
+    color: "$grayDark12",
+
+    "&:hover": {
+      backgroundColor: "$indigoDark2",
+    },
+  },
+});
+
+const NewTag = styled("span", {
+  padding: "2px 8px",
+  borderRadius: "999px",
+  backgroundColor: "hsl(226 70.0% 55.5%)",
+  color: "#fff",
+  fontSize: "11px",
+  fontWeight: 700,
+  letterSpacing: "0.03em",
 });
 
 const HeadingPrimary = styled("h1", {
@@ -115,6 +164,11 @@ const Hero = () => {
   return (
     <HeroWrapper>
       <HeroStyle id="hero-page">
+        <AnnouncementBadge to="/calendario">
+          <NewTag>NEW</NewTag>
+          Calendario — Google &amp; Outlook, one popup
+          <ChevronArrow />
+        </AnnouncementBadge>
         <HeadingPrimary>
           <span style={{ color: "hsl(226 70.0% 55.5%)" }}>
             Hello! I'm Gaurav Suthar 🤖{" "}
