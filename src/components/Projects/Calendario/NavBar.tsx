@@ -86,7 +86,7 @@ const NavBar = () => {
   return (
     <NavOuter>
       <NavInner>
-        <LogoGroup href="/">
+        <LogoGroup href="/calendario">
           <LogoBadge>
             <CalendarioLogoIcon width={18} height={18} />
           </LogoBadge>

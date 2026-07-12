@@ -66,6 +66,8 @@ const Footer = () => {
           <FooterLink href={EXTENSION_URL} target="_blank" rel="noreferrer">
             Chrome Web Store
           </FooterLink>
+          <FooterLink href="/calendario/privacy">Privacy Policy</FooterLink>
+          <FooterLink href="/calendario/terms">Terms of Service</FooterLink>
           <FooterLink href="mailto:gaurav.suthar161@gmail.com">Contact</FooterLink>
         </Links>
       </FooterInner>
