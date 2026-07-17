@@ -1,4 +1,6 @@
-import { styled } from "../../../../stitches.config";
+"use client";
+
+import { styled } from "@/styles/stitches.config";
 
 const Container = styled("div", {
   maxWidth: "1160px",

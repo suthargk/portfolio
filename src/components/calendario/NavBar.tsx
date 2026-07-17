@@ -1,6 +1,8 @@
+"use client";
+
 import React from "react";
-import { styled } from "../../../../stitches.config";
-import CalendarioLogoIcon from "../../../assets/icons/CalendarioLogoIcon";
+import { styled } from "@/styles/stitches.config";
+import CalendarioLogoIcon from "./CalendarioLogoIcon";
 import Container from "./Container";
 import { EXTENSION_URL } from "./constants";
 

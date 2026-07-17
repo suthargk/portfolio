@@ -1,13 +1,16 @@
-import React from "react";
-import { styled } from "../../../../stitches.config";
+"use client";
 
-import settingsIntegrations from "../../../assets/images/calendario-screenshots/settings-integrations.png";
-import homeDark from "../../../assets/images/calendario-screenshots/home-dark.png";
-import monthPicker from "../../../assets/images/calendario-screenshots/month-picker.png";
-import eventDetail from "../../../assets/images/calendario-screenshots/event-detail.png";
-import eventExpanded from "../../../assets/images/calendario-screenshots/event-expanded.png";
-import settingsAppearance from "../../../assets/images/calendario-screenshots/settings-appearance.png";
-import settingsAccount from "../../../assets/images/calendario-screenshots/settings-account.png";
+import React from "react";
+import Image, { type StaticImageData } from "next/image";
+import { styled } from "@/styles/stitches.config";
+
+import settingsIntegrations from "@/assets/images/calendario-screenshots/settings-integrations.png";
+import homeDark from "@/assets/images/calendario-screenshots/home-dark.png";
+import monthPicker from "@/assets/images/calendario-screenshots/month-picker.png";
+import eventDetail from "@/assets/images/calendario-screenshots/event-detail.png";
+import eventExpanded from "@/assets/images/calendario-screenshots/event-expanded.png";
+import settingsAppearance from "@/assets/images/calendario-screenshots/settings-appearance.png";
+import settingsAccount from "@/assets/images/calendario-screenshots/settings-account.png";
 
 import Container from "./Container";
 import GlowField from "./GlowField";
@@ -163,9 +166,9 @@ interface Feature {
   title: string;
   description: string;
   bullets: string[];
-  image: string;
+  image: StaticImageData;
   imageAlt: string;
-  secondaryImage?: string;
+  secondaryImage?: StaticImageData;
   reverse?: boolean;
 }
 
@@ -276,13 +279,26 @@ const FeatureRow = ({ feature }: { feature: Feature }) => {
           {feature.secondaryImage ? (
             <StackedBehind>
               <ScreenshotFrame>
-                <img src={feature.secondaryImage} alt="" aria-hidden="true" draggable={false} />
+                <Image
+                  src={feature.secondaryImage}
+                  alt=""
+                  aria-hidden="true"
+                  draggable={false}
+                  sizes="(min-width: 768px) 310px, 250px"
+                  style={{ width: "100%", height: "auto" }}
+                />
               </ScreenshotFrame>
             </StackedBehind>
           ) : null}
           <StackedFront>
             <ScreenshotFrame>
-              <img src={feature.image} alt={feature.imageAlt} draggable={false} />
+              <Image
+                src={feature.image}
+                alt={feature.imageAlt}
+                draggable={false}
+                sizes="(min-width: 768px) 310px, 250px"
+                style={{ width: "100%", height: "auto" }}
+              />
             </ScreenshotFrame>
           </StackedFront>
         </Reveal>

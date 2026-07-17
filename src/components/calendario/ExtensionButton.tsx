@@ -1,6 +1,8 @@
+"use client";
+
 import React from "react";
-import { styled } from "../../../../stitches.config";
-import ChromeIcon from "../../../assets/icons/ChromeIcon";
+import { styled } from "@/styles/stitches.config";
+import ChromeIcon from "./ChromeIcon";
 import { EXTENSION_URL } from "./constants";
 
 const ButtonStyle = styled("a", {
@@ -67,7 +69,7 @@ const ExtensionButton = ({ size = "lg" }: ExtensionButtonProps) => {
     <ButtonStyle href={EXTENSION_URL} target="_blank" rel="noreferrer" size={size}>
       <ChromeIcon size={size === "lg" ? 20 : 17} />
       <span>
-        Add to Chrome<Free> — It's free</Free>
+        Add to Chrome<Free> — It&apos;s free</Free>
       </span>
     </ButtonStyle>
   );

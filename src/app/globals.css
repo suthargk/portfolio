@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: var(--font-wotfard), system-ui, -apple-system, sans-serif;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* restrained indigo-blue accent, used sparingly against a neutral gray/white surface */
+  --color-accent-50: #eef1fd;
+  --color-accent-100: #dde3fb;
+  --color-accent-200: #b9c5f7;
+  --color-accent-300: #93a5f1;
+  --color-accent-400: #6b82ea;
+  --color-accent-500: #5468e0;
+  --color-accent-600: #4453c4;
+  --color-accent-700: #37429b;
+  --color-accent-800: #2c3479;
+  --color-accent-900: #232a5f;
+
+  --color-ink-950: #0a0a0a;
+  --color-ink-900: #171717;
+  --color-ink-800: #262626;
+  --color-ink-700: #404040;
+  --color-ink-600: #525252;
+  --color-ink-500: #737373;
+  --color-ink-400: #a3a3a3;
+  --color-ink-300: #d4d4d4;
+  --color-ink-200: #e5e5e5;
+  --color-ink-100: #f5f5f5;
+  --color-ink-50: #fafafa;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-ink-900 dark:bg-ink-950 dark:text-ink-100;
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    @apply bg-accent-200 text-ink-950;
+  }
+}

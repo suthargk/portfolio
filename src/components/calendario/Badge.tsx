@@ -1,5 +1,7 @@
+"use client";
+
 import React from "react";
-import { styled } from "../../../../stitches.config";
+import { styled } from "@/styles/stitches.config";
 
 const BadgeStyle = styled("span", {
   display: "inline-flex",

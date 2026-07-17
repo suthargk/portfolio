@@ -1,7 +1,10 @@
-import React from "react";
+"use client";
 
-import { keyframes, styled } from "../../../../stitches.config";
-import homeLight from "../../../assets/images/calendario-screenshots/home-light.png";
+import React from "react";
+import Image from "next/image";
+
+import { keyframes, styled } from "@/styles/stitches.config";
+import homeLight from "@/assets/images/calendario-screenshots/home-light.png";
 import Badge from "./Badge";
 import Container from "./Container";
 import ExtensionButton from "./ExtensionButton";
@@ -199,7 +202,7 @@ const Hero = () => {
           <Reveal delay={160}>
             <HeadingDescription>
               Calendario merges your Google Calendar and Outlook / Microsoft
-              365 calendar into a single toolbar popup — see what's next, join
+              365 calendar into a single toolbar popup — see what&apos;s next, join
               a call, or respond to an invite without ever opening either
               calendar app.
             </HeadingDescription>
@@ -225,10 +228,12 @@ const Hero = () => {
         <ImageSide>
           <Reveal delay={200}>
             <ScreenshotFrame>
-              <img
+              <Image
                 src={homeLight}
                 alt="Calendario agenda popup showing today's meetings"
                 draggable={false}
+                sizes="(min-width: 768px) 310px, 250px"
+                style={{ width: "100%", height: "auto" }}
               />
             </ScreenshotFrame>
           </Reveal>

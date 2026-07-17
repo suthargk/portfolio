@@ -17,12 +17,13 @@ const darkColors = {
   violetDark,
 };
 
-let obj = {};
+let obj: Record<string, string> = {};
 Object.values(darkColors).forEach((parentValues) => {
-  Object.keys(parentValues).forEach((key, index) => {
+  const values = parentValues as Record<string, string>;
+  Object.keys(values).forEach((key, index) => {
     obj = {
       ...obj,
-      [key.split(index + 1)[0] + "Dark" + (index + 1)]: parentValues[key],
+      [key.split(String(index + 1))[0] + "Dark" + (index + 1)]: values[key],
     };
   });
 });
@@ -60,7 +61,7 @@ export const {
     "prefers-color-scheme:": "dark",
   },
   utils: {
-    marginX: (value) => ({ marginLeft: value, marginRight: value }),
+    marginX: (value: string | number) => ({ marginLeft: value, marginRight: value }),
   },
 });
 

@@ -1,9 +1,12 @@
-import React, { useEffect, useLayoutEffect } from "react";
-import { styled } from "../../../../../stitches.config";
+"use client";
+
+import React from "react";
+import { styled } from "@/styles/stitches.config";
 import NavBar from "../NavBar";
 import Footer from "../Footer";
 import Container from "../Container";
 import Reveal from "../Reveal";
+import { CalendarioEffects } from "../CalendarioEffects";
 
 const PageStyled = styled("div", {
   backgroundColor: "#000",
@@ -99,27 +102,9 @@ interface LegalLayoutProps {
 }
 
 const LegalLayout = ({ title, updatedAt, children }: LegalLayoutProps) => {
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
-    const html = document.documentElement;
-    const body = document.body;
-    const prevHtmlBg = html.style.backgroundColor;
-    const prevBodyBg = body.style.backgroundColor;
-
-    html.style.backgroundColor = "#000";
-    body.style.backgroundColor = "#000";
-
-    return () => {
-      html.style.backgroundColor = prevHtmlBg;
-      body.style.backgroundColor = prevBodyBg;
-    };
-  }, []);
-
   return (
     <PageStyled>
+      <CalendarioEffects />
       <NavBar />
       <Main>
         <Reveal>

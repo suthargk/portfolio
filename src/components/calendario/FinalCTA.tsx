@@ -1,5 +1,7 @@
+"use client";
+
 import React from "react";
-import { styled } from "../../../../stitches.config";
+import { styled } from "@/styles/stitches.config";
 import Badge from "./Badge";
 import Container from "./Container";
 import ExtensionButton from "./ExtensionButton";

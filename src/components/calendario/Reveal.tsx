@@ -1,5 +1,7 @@
+"use client";
+
 import React from "react";
-import { styled } from "../../../../stitches.config";
+import { styled } from "@/styles/stitches.config";
 import { useInView } from "./useInView";
 
 const Box = styled("div", {
@@ -27,7 +29,7 @@ interface RevealProps {
 }
 
 const Reveal = ({ children, delay = 0 }: RevealProps) => {
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView<HTMLDivElement>();
 
   return (
     <Box

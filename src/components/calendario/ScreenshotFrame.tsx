@@ -1,4 +1,6 @@
-import { styled } from "../../../../stitches.config";
+"use client";
+
+import { styled } from "@/styles/stitches.config";
 
 const ScreenshotFrame = styled("div", {
   borderRadius: "22px",

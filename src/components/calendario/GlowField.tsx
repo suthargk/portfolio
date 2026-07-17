@@ -1,5 +1,7 @@
+"use client";
+
 import React from "react";
-import { keyframes, styled } from "../../../../stitches.config";
+import { keyframes, styled } from "@/styles/stitches.config";
 
 const Field = styled("div", {
   position: "absolute",
