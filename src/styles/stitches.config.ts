@@ -71,6 +71,12 @@ export const darkTheme = createTheme("dark-theme", {
   fonts: {},
 });
 
+// Only @font-face is safe to register document-wide — it just makes the
+// font available, it doesn't render anything. The reset/font-family rules
+// used to live here too, but since /calendario is reached via client-side
+// routing (no full page reload), that stylesheet was never torn down and
+// kept overriding body's font/margins on every other route after a visit.
+// Those rules now live scoped on CalendarioShell instead.
 const injectGlobalStyles = globalCss({
   "@font-face": {
     fontWeight: 400,
@@ -78,23 +84,6 @@ const injectGlobalStyles = globalCss({
     fontFamily: "Wotfard",
     fontDisplay: "optional",
     src: "url('/assets/fonts/Wotfard-Medium.ttf') format('ttf')",
-  },
-  "*, *::after, *::before": {
-    boxSizing: "border-box",
-    padding: 0,
-    margin: 0,
-  },
-  html: {
-    boxSizing: "border-box",
-    backgroundColor: "$universal",
-  },
-  body: {
-    // font-family here
-    fontFamily: "$display",
-    scrollBehavior: "smooth",
-    MozOsxFontSmoothing: "grayscale",
-    WebkitFontSmoothing: "antialiased",
-    textRendering: "optimizeLegibility",
   },
 });
 
