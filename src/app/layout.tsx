@@ -4,6 +4,7 @@ import { wotfard } from "@/lib/fonts";
 import { site } from "@/lib/site";
 import { ThemeProvider } from "@/components/site/theme-provider";
 import { JsonLd } from "@/components/site/json-ld";
+import { BfcacheReload } from "@/components/site/bfcache-reload";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -79,6 +80,7 @@ export default function RootLayout({
       <body className="font-sans">
         <JsonLd data={personJsonLd} />
         <JsonLd data={websiteJsonLd} />
+        <BfcacheReload />
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           {children}
         </ThemeProvider>
