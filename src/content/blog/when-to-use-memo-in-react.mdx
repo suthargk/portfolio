@@ -1,0 +1,35 @@
+---
+title: "When to Use memo in React"
+description: "React.memo looks like a free performance win, but used carelessly it adds overhead without preventing a single re-render. Here's how to tell when it actually helps."
+date: "2023-06-30"
+---
+
+When state changes, React re-renders that component **and every one of its descendants**, regardless of whether their props actually changed. Most of the time this is fine — React's diffing is fast, and re-rendering isn't the same as re-painting the DOM. But in components with expensive render logic, or components rendered many times in a list, that repeated work adds up.
+
+`React.memo` wraps a component so React skips re-rendering it when its props are shallow-equal to the previous render. It's a targeted fix, not a default.
+
+## When it actually helps
+
+- **Pure presentational components rendered in a large list** — a row component re-rendered hundreds of times when only one row's data changed.
+- **Components with expensive render work** — heavy computation, large DOM trees, or chart/canvas rendering that shouldn't repeat every parent re-render.
+- **Components that receive the same props most of the time** — a sidebar or header that re-renders whenever an unrelated part of the page updates state.
+
+## When it doesn't help — or actively hurts
+
+- **Components that receive new object/array/function props on every render.** `memo` does a shallow comparison; a new inline `() => {}` or `{ ...obj }` literal breaks it every time. You need `useCallback`/`useMemo` on the parent too, or `memo` does nothing but add a comparison cost.
+- **Components that almost always re-render anyway** because their props change on most renders — the comparison is pure overhead.
+- **Cheap components.** If a component renders a `<span>` and some text, the cost of the shallow-equality check can exceed the cost of just re-rendering it.
+
+## A simple mental model
+
+Reach for `memo` when you can point at a specific, measured re-render that's expensive and unnecessary — not as a blanket wrapper around every component. Profile first (React DevTools' Profiler tab), memoize second.
+
+```tsx
+const Row = memo(function Row({ item }: { item: Item }) {
+  return <li>{item.label}</li>;
+});
+```
+
+If `Row` is rendered inside a list and the parent re-renders for unrelated reasons, wrapping it in `memo` stops React from re-rendering every row — as long as `item` itself doesn't change identity on every render.
+
+*An earlier take on this topic is also up on [dev.to](https://dev.to/suthargk/when-to-use-memo-in-react-dp3).*
