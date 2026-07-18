@@ -6,9 +6,9 @@ import { LogoMark, MenuIcon, CloseIcon } from "./icons";
 import { ThemeToggle } from "./theme-toggle";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Work", href: "#work" },
-  { label: "Projects", href: "#projects" },
+  { label: "About", href: "/#about" },
+  { label: "Work", href: "/#work" },
+  { label: "Projects", href: "/#projects" },
   { label: "Blog", href: "/blog" },
 ];
 
