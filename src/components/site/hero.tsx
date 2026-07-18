@@ -43,6 +43,12 @@ export function Hero() {
           >
             About me
           </a>
+          <a
+            href={`mailto:${site.socials.email}?subject=${encodeURIComponent("Let's talk")}`}
+            className="rounded-md border border-accent-300 px-4 py-2 text-sm font-medium text-accent-700 transition hover:border-accent-400 hover:bg-accent-50 dark:border-accent-700 dark:text-accent-300 dark:hover:bg-accent-900/40"
+          >
+            Open to opportunities
+          </a>
           <Link
             href={site.socials.twitter}
             target="_blank"
