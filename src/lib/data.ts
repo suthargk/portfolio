@@ -1,4 +1,5 @@
 import type { StaticImageData } from "next/image";
+import abhaynoblesImg from "@/assets/images/abhaynobles.png";
 import calendarioImg from "@/assets/images/calendario.png";
 import connectwiseLogo from "@/assets/images/connectwise_logo.jpeg";
 import hectorLogo from "@/assets/images/hectorai_logo.png";
@@ -16,6 +17,17 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    id: "abhay-nobles-school",
+    name: "Shri Abhay Nobles School",
+    description:
+      "A full school website and admin platform for a K-12 school in Rajasthan, covering admissions enquiries, gallery, academics, achievements, homework, and news, backed by a drag-and-drop CMS for staff to manage content.",
+    image: abhaynoblesImg,
+    href: "https://www.shriabhaynoblesschool.com",
+    external: true,
+    status: "live",
+    tags: ["Next.js", "TypeScript", "Prisma", "Supabase", "Tailwind CSS"],
+  },
   {
     id: "calendario",
     name: "Calendario",
