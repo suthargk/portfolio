@@ -2,7 +2,7 @@ import LegalLayout from "./LegalLayout";
 
 const PrivacyPolicy = () => {
   return (
-    <LegalLayout title="Privacy Policy" updatedAt="July 12, 2026">
+    <LegalLayout title="Privacy Policy" updatedAt="September 21, 2026">
       <p>
         Calendario (&quot;the extension&quot;, &quot;we&quot;, &quot;us&quot;) is a Chrome extension built
         and operated by Gaurav Suthar. This policy explains what data
@@ -37,6 +37,14 @@ const PrivacyPolicy = () => {
           to show which account is connected.
         </li>
         <li>
+          <strong>Google contacts (optional)</strong> — names, email
+          addresses, and profile photos from your saved contacts, your
+          &quot;other contacts&quot;, and (Google Workspace accounts only) your
+          organization&apos;s directory. Only accessed if you choose to allow it
+          when adding guests to an event. See{" "}
+          <a href="#google-contacts">Google contacts</a> below.
+        </li>
+        <li>
           <strong>Extension preferences</strong> — theme, language, time
           format, and which calendars are enabled.
         </li>
@@ -50,6 +58,38 @@ const PrivacyPolicy = () => {
         in the popup — Calendario does not operate a backend database, and we
         do not upload, copy, or retain your calendar content on any server we
         control.
+      </p>
+
+      <h2 id="google-contacts">Google contacts (optional)</h2>
+      <p>
+        If you choose to allow it when adding guests to an event, Calendario
+        reads names, email addresses and profile photos from your Google
+        contacts, your &quot;other contacts&quot; (people you have emailed), and
+        — for Google Workspace accounts — your organization&apos;s directory.
+        This is used only to suggest people to invite as you type. These
+        results are requested directly from Google by the extension on your
+        device, are kept in memory only while the extension is open, and are
+        never stored, sent to any server of ours, or shared with anyone. The
+        only contact information that leaves your device is the email address
+        and name of a person you select, which is sent to Google Calendar as
+        a guest on the event you are creating. You can revoke access at any
+        time at{" "}
+        <a
+          href="https://myaccount.google.com/permissions"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          myaccount.google.com/permissions
+        </a>
+        .
+      </p>
+
+      <h2>Location suggestions</h2>
+      <p>
+        When you type in an event&apos;s location field, the text you type may be
+        sent to Google Places to provide address suggestions. This only
+        happens when the feature is enabled, and nothing else from your
+        calendar is included.
       </p>
 
       <h2>Analytics</h2>
@@ -71,12 +111,29 @@ const PrivacyPolicy = () => {
         flows to:
       </p>
       <ul>
-        <li>Google (Google Calendar API, Google sign-in, Google Analytics)</li>
+        <li>
+          Google (Google Calendar API, Google People API, Google Places,
+          Google sign-in, Google Analytics)
+        </li>
         <li>Microsoft (Microsoft Graph API, Microsoft 365 sign-in)</li>
       </ul>
       <p>
         Each provider&apos;s use of data is governed by its own privacy policy —
         Google&apos;s and Microsoft&apos;s — in addition to this one.
+      </p>
+
+      <h2>Google API Services User Data Policy</h2>
+      <p>
+        Calendario&apos;s use and transfer of information received from Google
+        APIs to any other app will adhere to the{" "}
+        <a
+          href="https://developers.google.com/terms/api-services-user-data-policy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Google API Services User Data Policy
+        </a>
+        , including the Limited Use requirements.
       </p>
 
       <h2>Your choices and controls</h2>
