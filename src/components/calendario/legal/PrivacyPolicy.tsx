@@ -2,7 +2,7 @@ import LegalLayout from "./LegalLayout";
 
 const PrivacyPolicy = () => {
   return (
-    <LegalLayout title="Privacy Policy" updatedAt="September 21, 2026">
+    <LegalLayout title="Privacy Policy" updatedAt="September 23, 2026">
       <p>
         Calendario (&quot;the extension&quot;, &quot;we&quot;, &quot;us&quot;) is a Chrome extension built
         and operated by Gaurav Suthar. This policy explains what data
@@ -38,9 +38,8 @@ const PrivacyPolicy = () => {
         </li>
         <li>
           <strong>Google contacts (optional)</strong> — names, email
-          addresses, and profile photos from your saved contacts, your
-          &quot;other contacts&quot;, and (Google Workspace accounts only) your
-          organization&apos;s directory. Only accessed if you choose to allow it
+          addresses, and profile photos from your saved contacts and your
+          &quot;other contacts&quot;. Only accessed if you choose to allow it
           when adding guests to an event. See{" "}
           <a href="#google-contacts">Google contacts</a> below.
         </li>
@@ -64,8 +63,7 @@ const PrivacyPolicy = () => {
       <p>
         If you choose to allow it when adding guests to an event, Calendario
         reads names, email addresses and profile photos from your Google
-        contacts, your &quot;other contacts&quot; (people you have emailed), and
-        — for Google Workspace accounts — your organization&apos;s directory.
+        contacts and your &quot;other contacts&quot; (people you have emailed).
         This is used only to suggest people to invite as you type. These
         results are requested directly from Google by the extension on your
         device, are kept in memory only while the extension is open, and are
@@ -94,15 +92,35 @@ const PrivacyPolicy = () => {
 
       <h2>Analytics</h2>
       <p>
-        We use Google Analytics to understand aggregate feature usage (for
-        example, which settings are used or how often the popup is opened)
-        and to fix bugs. This telemetry is limited to anonymized product
-        usage events and basic technical information (such as browser
-        version and extension version) — it never includes the content of
-        your calendar events, attendee information, or account credentials.
-        We also see aggregate install and rating statistics that the Chrome
-        Web Store provides to all developers; this data is controlled by
-        Google, not Calendario.
+        The Calendario extension itself contains no analytics or tracking
+        code. We do see aggregate install and rating statistics that the
+        Chrome Web Store provides to all developers, and standard web
+        analytics on this website (gauravsuthar.com); neither includes the
+        content of your calendar events, attendee information, or account
+        credentials, and both are controlled by Google, not Calendario.
+      </p>
+
+      <h2>How your data is protected</h2>
+      <p>
+        All requests to Google, Microsoft and Google Places APIs are made
+        over HTTPS/TLS directly from your browser; Calendario has no backend
+        server that data passes through or is stored on. Your Google and
+        Microsoft access tokens are kept in <code>chrome.storage.local</code>,
+        which is sandboxed to this extension and is not readable by websites
+        or other extensions. Contact search results (name, email, photo) are
+        held in memory only for the lifetime of the open popup and are never
+        written to disk. Each token is scoped to the minimum permissions you
+        granted and can be revoked at any time from{" "}
+        <a
+          href="https://myaccount.google.com/permissions"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          myaccount.google.com/permissions
+        </a>{" "}
+        (Google) or your Microsoft account&apos;s app permissions page.
+        Uninstalling the extension removes all locally stored tokens and
+        cached data.
       </p>
 
       <h2>Sharing and third parties</h2>
@@ -113,7 +131,7 @@ const PrivacyPolicy = () => {
       <ul>
         <li>
           Google (Google Calendar API, Google People API, Google Places,
-          Google sign-in, Google Analytics)
+          Google sign-in)
         </li>
         <li>Microsoft (Microsoft Graph API, Microsoft 365 sign-in)</li>
       </ul>

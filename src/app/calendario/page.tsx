@@ -3,6 +3,7 @@ import { CalendarioShell } from "@/components/calendario/CalendarioShell";
 import NavBar from "@/components/calendario/NavBar";
 import Hero from "@/components/calendario/Hero";
 import Features from "@/components/calendario/Features";
+import DataUsage from "@/components/calendario/DataUsage";
 import FinalCTA from "@/components/calendario/FinalCTA";
 import Footer from "@/components/calendario/Footer";
 import { CalendarioEffects } from "@/components/calendario/CalendarioEffects";
@@ -52,6 +53,7 @@ export default function CalendarioPage() {
       <NavBar />
       <Hero />
       <Features />
+      <DataUsage />
       <FinalCTA />
       <Footer />
     </CalendarioShell>
