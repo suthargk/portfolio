@@ -185,7 +185,7 @@ const Hero = () => {
           <Reveal>
             <LiveBadge>
               <LiveDot />
-              Live on the Chrome Web Store
+              Calendario · Live on the Chrome Web Store
             </LiveBadge>
           </Reveal>
 

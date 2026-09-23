@@ -44,6 +44,12 @@ const PrivacyPolicy = () => {
           <a href="#google-contacts">Google contacts</a> below.
         </li>
         <li>
+          <strong>Event reminders</strong> — the title, start time, reminder
+          time and link of your upcoming events, kept on your device to show
+          reminder notifications. See <a href="#event-reminders">Event
+          reminders</a> below.
+        </li>
+        <li>
           <strong>Extension preferences</strong> — theme, language, time
           format, and which calendars are enabled.
         </li>
@@ -82,6 +88,21 @@ const PrivacyPolicy = () => {
         .
       </p>
 
+      <h2 id="event-reminders">Event reminders</h2>
+      <p>
+        To show reminder notifications, Calendario keeps a short-lived list
+        of your upcoming reminders on your own device: the event title,
+        start time, reminder time and a link to the event. It is used only to
+        show the reminder (a notification, a small card on the page you are
+        viewing, and a short sound) and is removed within about an hour after
+        the event starts, when you sign out, or when you turn reminder
+        notifications off in Settings. It is stored locally in your browser
+        (<code>chrome.storage.local</code>), is never sent to us or to anyone
+        else, and is not used for any other purpose. You can turn reminder
+        notifications off, or have them close automatically after a time you
+        choose, at any point in Settings.
+      </p>
+
       <h2>Location suggestions</h2>
       <p>
         When you type in an event&apos;s location field, the text you type may be
@@ -94,10 +115,10 @@ const PrivacyPolicy = () => {
       <p>
         The Calendario extension itself contains no analytics or tracking
         code. We do see aggregate install and rating statistics that the
-        Chrome Web Store provides to all developers, and standard web
-        analytics on this website (gauravsuthar.com); neither includes the
-        content of your calendar events, attendee information, or account
-        credentials, and both are controlled by Google, not Calendario.
+        Chrome Web Store provides to all developers, and privacy-friendly
+        page-view analytics (Vercel Analytics) on this website
+        (gauravsuthar.com); neither includes the content of your calendar
+        events, attendee information, or account credentials.
       </p>
 
       <h2>How your data is protected</h2>
