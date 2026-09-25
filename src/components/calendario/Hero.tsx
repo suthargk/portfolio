@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 
 import { keyframes, styled } from "@/styles/stitches.config";
-import homeLight from "@/assets/images/calendario-screenshots/home-light.png";
+import homeLight from "@/assets/images/calendario-screenshots/timeline-light.png";
 import Badge from "./Badge";
 import Container from "./Container";
 import ExtensionButton from "./ExtensionButton";
@@ -230,7 +230,7 @@ const Hero = () => {
             <ScreenshotFrame>
               <Image
                 src={homeLight}
-                alt="Calendario agenda popup showing today's meetings"
+                alt="Calendario timeline view with a live Now marker and today's meetings"
                 draggable={false}
                 sizes="(min-width: 768px) 310px, 250px"
                 style={{ width: "100%", height: "auto" }}

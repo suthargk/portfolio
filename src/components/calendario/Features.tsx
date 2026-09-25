@@ -4,22 +4,20 @@ import React from "react";
 import Image, { type StaticImageData } from "next/image";
 import { styled } from "@/styles/stitches.config";
 
-import settingsIntegrations from "@/assets/images/calendario-screenshots/settings-integrations.png";
-import homeDark from "@/assets/images/calendario-screenshots/home-dark.png";
+import timelineDark from "@/assets/images/calendario-screenshots/timeline-dark.png";
+import timelineEventExpanded from "@/assets/images/calendario-screenshots/timeline-event-expanded.png";
+import agendaList from "@/assets/images/calendario-screenshots/agenda-list.png";
 import monthPicker from "@/assets/images/calendario-screenshots/month-picker.png";
-import eventDetail from "@/assets/images/calendario-screenshots/event-detail.png";
-import eventExpanded from "@/assets/images/calendario-screenshots/event-expanded.png";
-import settingsAppearance from "@/assets/images/calendario-screenshots/settings-appearance.png";
-import settingsAccount from "@/assets/images/calendario-screenshots/settings-account.png";
+import dragToCreate from "@/assets/images/calendario-screenshots/drag-to-create.png";
+import createEvent from "@/assets/images/calendario-screenshots/create-event.png";
 import searchEvents from "@/assets/images/calendario-screenshots/search-events.png";
-import searchResultExpanded from "@/assets/images/calendario-screenshots/search-result-expanded.png";
-import filterTime from "@/assets/images/calendario-screenshots/filter-time.png";
-import filterPeople from "@/assets/images/calendario-screenshots/filter-people.png";
+import searchFilters from "@/assets/images/calendario-screenshots/search-filters.png";
 import reminderPopup from "@/assets/images/calendario-screenshots/reminder-popup.png";
-import settingsReminders from "@/assets/images/calendario-screenshots/settings-reminders.png";
+import settingsAppearance from "@/assets/images/calendario-screenshots/settings-appearance.png";
+import settingsBehavior from "@/assets/images/calendario-screenshots/settings-behavior.png";
+import settingsIntegrations from "@/assets/images/calendario-screenshots/settings-integrations.png";
 
 import Container from "./Container";
-import CreateEventGallery from "./CreateEventGallery";
 import GlowField from "./GlowField";
 import Reveal from "./Reveal";
 import ScreenshotFrame from "./ScreenshotFrame";
@@ -212,58 +210,86 @@ interface Feature {
 
 const features: Feature[] = [
   {
-    eyebrow: "MULTI-PROVIDER SYNC",
-    title: "Google and Outlook, together at last",
+    eyebrow: "TIMELINE VIEW",
+    title: "Your day, laid out hour by hour",
     description:
-      "Sign in to Google Calendar and Microsoft 365 independently — Calendario merges every event into one chronologically sorted agenda.",
+      "See meetings where they actually sit in your day, with a live marker showing exactly where you are right now.",
     bullets: [
-      "Use one provider or both at the same time",
-      "Toggle secondary calendars on or off — Family, Team, Holidays",
-      "Manual \"Sync Now\" plus automatic background refresh",
+      "A red \"Now\" line with the current time, always in the right place",
+      "Overlapping meetings sit side by side instead of hiding behind each other",
+      "Scrolled away? A \"Jump to now\" pill takes you straight back",
+      "Colour-coded cards with the provider icon, in light and dark mode",
     ],
-    image: settingsIntegrations,
-    imageAlt: "Google and Outlook accounts connected in Calendario settings",
+    image: timelineDark,
+    imageAlt: "Calendario timeline in dark mode with a Now marker and a Jump to now button",
   },
   {
-    eyebrow: "YOUR DAY, AT A GLANCE",
-    title: "Know what's happening without opening a tab",
+    eyebrow: "EVENT DETAILS",
+    title: "Expand any meeting without leaving the timeline",
     description:
-      "A clean agenda of event cards shows exactly where you stand — what's live, what's next, and how much time is left.",
+      "Tap a card and it opens in place with the calendar, time, reminder and organizer, so you never lose your spot in the day.",
     bullets: [
-      "\"NOW\" and \"Starts in 15m\" badges with a live progress bar",
-      "Compact month strip plus an expandable full month view",
-      "Built-in search across every connected calendar",
+      "Which calendar and account the event belongs to, at a glance",
+      "Start and end time, reminder lead time and organizer in one card",
+      "Turn on \"Expand multiple events\" to keep several open at once",
     ],
-    image: homeDark,
-    imageAlt: "Calendario agenda view showing live and upcoming meetings",
-    secondaryImage: monthPicker,
+    image: timelineEventExpanded,
+    imageAlt: "An expanded event on the timeline showing calendar, time, reminder and organizer",
     reverse: true,
   },
   {
-    eyebrow: "RICH EVENT DETAILS",
-    title: "Everything about a meeting, one tap away",
+    eyebrow: "AGENDA LIST",
+    title: "Prefer a simple list? One toggle away",
     description:
-      "Expand any event to see the full picture — no need to leave the popup or dig through your inbox.",
+      "Switch the timeline off in Settings and your day becomes a clean, colourful agenda with live status on every card.",
     bullets: [
-      "One-tap Join — Google Meet and Microsoft Teams links detected automatically",
-      "Full attendee list with accepted / declined / tentative status",
-      "Description, location, reminders, and downloadable attachments",
+      "\"Starts in 23m\" badges so the next meeting is never a surprise",
+      "One-tap Join button on cards that have a video call",
+      "Calendar chip on every card, plus expandable details",
     ],
-    image: eventDetail,
-    imageAlt: "Full event detail view with attendees and join button",
+    image: agendaList,
+    imageAlt: "Agenda list with a Starts in 23m badge and a Join button on the Dinner Time event",
   },
   {
-    eyebrow: "RESPOND WITHOUT LEAVING THE POPUP",
-    title: "RSVP, share, or clear your calendar in seconds",
+    eyebrow: "JUMP TO ANY DATE",
+    title: "A week strip and a month picker, both a tap away",
     description:
-      "Handle invites the moment they land, right from the card they arrived on.",
+      "Scan the week at the top, or open the month grid to leap to any day, and see which days have events before you tap.",
     bullets: [
-      "Accept, decline, or mark tentative — synced straight back to Google or Outlook",
-      "Copy an event's shareable link in one click",
-      "Delete a single occurrence or an entire recurring series",
+      "Week strip with coloured dots showing each day's events",
+      "Month picker with a Today shortcut and previous / next arrows",
+      "Today stays highlighted so you always know where you are",
     ],
-    image: eventExpanded,
-    imageAlt: "Expanded event card with attendee avatars and reminder",
+    image: monthPicker,
+    imageAlt: "Month picker over the calendar with Today shortcut and month navigation",
+    reverse: true,
+  },
+  {
+    eyebrow: "DRAG TO CREATE",
+    title: "Drag across the timeline to pick a time",
+    description:
+      "Press and drag on any free stretch of the timeline and Calendario turns it into a new event, so scheduling starts where you're already looking.",
+    bullets: [
+      "Handles at the start and end let you fine-tune the range",
+      "Live start, end and duration labels while you drag",
+      "A dashed selection previews the exact time range before you commit",
+    ],
+    image: dragToCreate,
+    imageAlt: "Dashed selection on the timeline from 06:15 PM to 08:15 PM with a 2h duration label",
+  },
+  {
+    eyebrow: "CREATE EVENTS",
+    title: "A full event composer with conflict warnings",
+    description:
+      "Add an event or a task from the popup. If your new time collides with something already booked, Calendario tells you before you save.",
+    bullets: [
+      "Event and Task tabs, with a title field and choice of calendar and account",
+      "Location field with a map shortcut beside it",
+      "All-day toggle plus start and end date and time pickers",
+      "\"Overlaps with other events\" lists exactly what clashes, with a \"Find a time\" shortcut",
+    ],
+    image: createEvent,
+    imageAlt: "Create Event form in dark mode showing an overlap warning with two conflicting events",
     reverse: true,
   },
   {
@@ -272,82 +298,72 @@ const features: Feature[] = [
     description:
       "Press ⌘K and search every connected calendar at once. Quick filters and suggestions get you to the right meeting before you finish typing.",
     bullets: [
-      "One-tap quick filters: Today, Tomorrow, This week, Next week, Meetings, Attachments",
+      "Quick filters: Today, Tomorrow, This week, Next week, Meetings, Attachments",
       "Suggestions drawn from your own events, with provider icons at a glance",
-      "Keyboard-first: arrows to navigate, Enter to open, Esc to close",
+      "Keyboard-first: arrows to navigate, Enter to select, Esc to close",
     ],
     image: searchEvents,
-    imageAlt: "Search events panel with quick filters, suggestions and upcoming events",
-    secondaryImage: searchResultExpanded,
+    imageAlt: "Search panel with quick filters, suggestions and upcoming events in dark mode",
   },
   {
     eyebrow: "FILTER BY ANYTHING",
-    title: "Narrow it down by time, people, status, and more",
+    title: "Stack filters as chips and see what matches",
     description:
-      "When search alone isn't enough, the filter panel slices your agenda along every dimension that matters, with a live count of matching events.",
+      "Combine filters like duration, day and time of day. Each one becomes a removable chip, with a count on the filter button and a summary of what was searched.",
     bullets: [
-      "Date range, time of day (morning to evening), and duration",
-      "Organized by me, invited by others, or a specific attendee or organizer",
-      "Just me, 1:1, groups of 3+, and external attendees",
-      "Separate tabs for Meeting, Status, and More filters, plus a one-tap Reset",
+      "Chips such as duration 30-60, when today and time evening, each removable in one tap",
+      "Badge on the filter button shows how many filters are active",
+      "\"All calendars searched\" summary: accounts, calendars and events found",
+      "Results grouped by day, with provider shortcuts for Google, Outlook and Zoom",
     ],
-    image: filterTime,
-    imageAlt: "Filter panel on the Time tab with date range, time of day and duration options",
-    secondaryImage: filterPeople,
+    image: searchFilters,
+    imageAlt: "Search results narrowed by three filter chips with a summary of calendars searched",
     reverse: true,
   },
   {
     eyebrow: "NEVER MISS A MEETING",
     title: "Reminders that actually reach you",
     description:
-      "A popup and a sound show up on whatever page you're on when a reminder is due, so a meeting never sneaks up on you.",
+      "A popup shows up on whatever page you're on when a reminder is due, right beside the Calendario side panel, so a meeting never sneaks up on you.",
     bullets: [
-      "In-page reminder popup with a one-click \"Open event\" button",
-      "Toggle reminders on or off from Settings, and silence them all in one switch",
-      "Auto-close reminders after a set time, or never",
-      "Choose where the extension opens, and add a floating page launcher icon with a per-site exclude list",
+      "In-page reminder with the event name, time and a one-click \"Open event\" button",
+      "Open Calendario as a side panel next to the page you're working on",
+      "Floating page launcher icon on any site, with an exclude-websites list",
     ],
     image: reminderPopup,
     imageAlt: "Reminder popup on a web page beside the Calendario side panel",
-    insetImage: settingsReminders,
-    insetAlt: "Settings showing reminder notification and auto-close options",
     wide: true,
-    reverse: true,
   },
   {
     eyebrow: "MAKE IT YOURS",
-    title: "Themes, time formats, and 15 languages",
+    title: "Themes, accent colours and how it behaves",
     description:
-      "Calendario adapts to how you like to work, not the other way around.",
+      "Calendario adapts to how you like to work, not the other way around, with a live preview for the settings that change how it looks.",
     bullets: [
-      "Light and dark mode with 7 accent color themes",
-      "12-hour or 24-hour time, with an optional live clock",
-      "National holidays overlaid right in your agenda",
-      "Available in 15 languages, including Hindi, Spanish, French, German, Japanese, and Arabic",
+      "System, Light or Dark theme with 7 accent colours",
+      "Timeline view toggle with an animated preview you can replay",
+      "12-hour or 24-hour time, with an optional live clock next to Today",
+      "Choose whether the toolbar icon opens a side panel, and show or hide the page launcher",
     ],
     image: settingsAppearance,
-    imageAlt: "Appearance settings with theme and accent color options",
-  },
-  {
-    eyebrow: "PRIVACY BY DESIGN",
-    title: "Your data stays between you and your calendar",
-    description:
-      "Calendario talks directly to Google's and Microsoft's own APIs — there's no third-party server sitting in between reading your events.",
-    bullets: [
-      "No intermediary server, ever",
-      "Sign in or out of either provider independently, any time",
-      "Manage exactly which calendars sync, per account",
-    ],
-    image: settingsAccount,
-    imageAlt: "Connected Google account with calendar sync toggles",
+    imageAlt: "Appearance settings with theme, accent colour and timeline view options",
+    secondaryImage: settingsBehavior,
     reverse: true,
   },
+  {
+    eyebrow: "CONNECTED ACCOUNTS",
+    title: "Google, Outlook and Zoom, all in one place",
+    description:
+      "Connect your accounts independently and Calendario merges every event into a single agenda. Sync, or disconnect, any time from Settings.",
+    bullets: [
+      "Use one account or several at the same time",
+      "\"Last synced\" status and a \"Sync Now\" button on every account",
+      "Disconnect any integration independently, whenever you like",
+    ],
+    image: settingsIntegrations,
+    imageAlt: "Connected accounts for Google, Outlook and Zoom with Sync Now buttons",
+  },
 ];
-
-// The create-event gallery sits between the filters row and the reminders row.
-const GALLERY_INDEX = features.findIndex(
-  (feature) => feature.eyebrow === "NEVER MISS A MEETING",
-);
 
 const FeatureRow = ({ feature }: { feature: Feature }) => {
   return (
@@ -416,13 +432,7 @@ const Features = () => {
     <SectionOuter>
       <GlowField />
       <Section>
-        {features.slice(0, GALLERY_INDEX).map((feature) => (
-          <FeatureRow key={feature.title} feature={feature} />
-        ))}
-      </Section>
-      <CreateEventGallery />
-      <Section>
-        {features.slice(GALLERY_INDEX).map((feature) => (
+        {features.map((feature) => (
           <FeatureRow key={feature.title} feature={feature} />
         ))}
       </Section>
