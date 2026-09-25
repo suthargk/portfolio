@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { CalendarioShell } from "@/components/calendario/CalendarioShell";
 import NavBar from "@/components/calendario/NavBar";
 import Hero from "@/components/calendario/Hero";
-import Features from "@/components/calendario/Features";
+import Showcase from "@/components/calendario/Showcase";
+import Highlights from "@/components/calendario/Highlights";
+import Reviews from "@/components/calendario/Reviews";
 import DataUsage from "@/components/calendario/DataUsage";
 import FinalCTA from "@/components/calendario/FinalCTA";
 import Footer from "@/components/calendario/Footer";
@@ -52,7 +54,9 @@ export default function CalendarioPage() {
       <CalendarioEffects />
       <NavBar />
       <Hero />
-      <Features />
+      <Showcase />
+      <Highlights />
+      <Reviews />
       <DataUsage />
       <FinalCTA />
       <Footer />

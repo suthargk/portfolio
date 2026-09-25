@@ -2,100 +2,69 @@
 
 import React from "react";
 import { styled } from "@/styles/stitches.config";
-import Badge from "./Badge";
 import Container from "./Container";
 import ExtensionButton from "./ExtensionButton";
 import Reveal from "./Reveal";
 
 const Section = styled(Container, {
-  padding: "40px 0 70px",
-  textAlign: "center",
+  padding: "20px 0 100px",
 
-  "@md": {
-    padding: "20px 0 50px",
-  },
+  "@md": { padding: "10px 0 64px" },
 });
 
 const Panel = styled("div", {
   position: "relative",
   overflow: "hidden",
-  borderRadius: "28px",
-  border: "1px solid rgba(255,255,255,0.1)",
+  textAlign: "center",
+  borderRadius: "36px",
+  border: "1px solid rgba(255,255,255,0.12)",
   background:
-    "linear-gradient(160deg, rgba(112,88,208,0.18), rgba(255,255,255,0.02))",
-  padding: "70px 40px",
+    "radial-gradient(70% 90% at 50% 0%, rgba(124,92,252,0.5), rgba(124,92,252,0.08) 70%), #08060f",
+  padding: "96px 40px",
 
-  "@md": {
-    padding: "50px 24px",
-  },
-});
-
-const PanelGlow = styled("div", {
-  position: "absolute",
-  top: "-20px",
-  left: "50%",
-  transform: "translateX(-50%)",
-  width: "760px",
-  height: "340px",
-  background:
-    "radial-gradient(closest-side, rgba(112,88,208,0.35) 0%, rgba(112,88,208,0.12) 45%, transparent 75%)",
-  filter: "blur(90px)",
-  pointerEvents: "none",
-  zIndex: 0,
-});
-
-const PanelContent = styled("div", {
-  position: "relative",
-  zIndex: 1,
+  "@md": { padding: "60px 24px", borderRadius: "28px" },
 });
 
 const Title = styled("h2", {
-  fontSize: "36px",
+  fontSize: "52px",
+  lineHeight: 1.08,
+  letterSpacing: "-0.025em",
   color: "#fff",
-  marginBottom: "14px",
+  maxWidth: "640px",
+  margin: "0 auto 16px",
 
-  "@md": {
-    fontSize: "28px",
-  },
+  "@md": { fontSize: "34px" },
 });
 
 const Subtitle = styled("p", {
-  fontSize: "16px",
-  color: "rgba(255,255,255,0.65)",
-  maxWidth: "480px",
-  margin: "0 auto 34px",
+  fontSize: "17px",
+  color: "rgba(255,255,255,0.68)",
+  maxWidth: "500px",
+  margin: "0 auto 36px",
   lineHeight: 1.6,
 });
 
-const BadgeRow = styled("div", {
-  display: "flex",
-  flexWrap: "wrap",
-  justifyContent: "center",
-  gap: "10px",
-  marginTop: "32px",
+const Meta = styled("div", {
+  marginTop: "20px",
+  fontSize: "13px",
+  fontWeight: 500,
+  color: "rgba(255,255,255,0.5)",
 });
 
 const FinalCTA = () => {
   return (
     <Section>
-      <Panel>
-        <PanelGlow />
-        <PanelContent>
-          <Reveal>
-            <Title>Ready to stop switching tabs?</Title>
-            <Subtitle>
-              Add Calendario to Chrome and see your whole day — Google and
-              Outlook together — the moment you click the toolbar icon.
-            </Subtitle>
-            <ExtensionButton />
-            <BadgeRow>
-              <Badge icon="⭐">Free forever</Badge>
-              <Badge icon="🧩">Manifest V3</Badge>
-              <Badge icon="🔒">Privacy-first</Badge>
-            </BadgeRow>
-          </Reveal>
-        </PanelContent>
-      </Panel>
+      <Reveal>
+        <Panel>
+          <Title>Ready to stop switching tabs?</Title>
+          <Subtitle>
+            Add Calendario to Chrome and see your whole day, Google,
+            Outlook and Zoom together, the moment you click the toolbar icon.
+          </Subtitle>
+          <ExtensionButton />
+          <Meta>Free forever · Manifest V3 · Privacy-first</Meta>
+        </Panel>
+      </Reveal>
     </Section>
   );
 };

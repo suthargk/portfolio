@@ -7,7 +7,19 @@ import Container from "./Container";
 import { EXTENSION_URL } from "./constants";
 
 const NavOuter = styled("div", {
+  position: "sticky",
+  top: 0,
+  zIndex: 50,
+  // Bleed past the shell's horizontal padding so the blur spans the viewport.
+  margin: "0 -80px",
+  padding: "0 80px",
   borderBottom: "1px solid rgba(255,255,255,0.08)",
+  background: "rgba(0,0,0,0.6)",
+  backdropFilter: "blur(14px)",
+  WebkitBackdropFilter: "blur(14px)",
+
+  "@lg": { margin: "0 -40px", padding: "0 40px" },
+  "@md": { margin: "0 -20px", padding: "0 20px" },
 });
 
 const NavInner = styled(Container, {
@@ -52,7 +64,7 @@ const NavRight = styled("div", {
   gap: "24px",
 });
 
-const BackLink = styled("a", {
+const NavLink = styled("a", {
   color: "rgba(255,255,255,0.6)",
   textDecoration: "none",
   fontSize: "14px",
@@ -63,7 +75,7 @@ const BackLink = styled("a", {
     color: "#fff",
   },
 
-  "@xs": {
+  "@md": {
     display: "none",
   },
 });
@@ -96,7 +108,9 @@ const NavBar = () => {
         </LogoGroup>
 
         <NavRight>
-          <BackLink href="/">&larr; Back to portfolio</BackLink>
+          <NavLink href="/calendario#showcase">Features</NavLink>
+          <NavLink href="/calendario#privacy">Privacy</NavLink>
+          <NavLink href="/">&larr; Portfolio</NavLink>
           <CTAButton href={EXTENSION_URL} target="_blank" rel="noreferrer">
             Add to Chrome
           </CTAButton>

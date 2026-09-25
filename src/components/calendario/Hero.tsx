@@ -4,55 +4,43 @@ import React from "react";
 import Image from "next/image";
 
 import { keyframes, styled } from "@/styles/stitches.config";
-import homeLight from "@/assets/images/calendario-screenshots/timeline-light.png";
-import Badge from "./Badge";
+import timelineLight from "@/assets/images/calendario-screenshots/timeline-light.png";
+import timelineDark from "@/assets/images/calendario-screenshots/timeline-dark.png";
+import agendaList from "@/assets/images/calendario-screenshots/agenda-list.png";
 import Container from "./Container";
 import ExtensionButton from "./ExtensionButton";
+import PhoneFrame from "./PhoneFrame";
 import Reveal from "./Reveal";
-import ScreenshotFrame from "./ScreenshotFrame";
 
-const HeroOuter = styled("div", {
+const HeroOuter = styled("section", {
   position: "relative",
   overflow: "hidden",
 });
 
 const Glow = styled("div", {
   position: "absolute",
-  top: "-200px",
+  top: "-260px",
   left: "50%",
   transform: "translateX(-50%)",
-  width: "900px",
-  height: "500px",
+  width: "min(1100px, 130vw)",
+  height: "640px",
   background:
-    "radial-gradient(closest-side, rgba(112,88,208,0.35), transparent)",
+    "radial-gradient(closest-side, rgba(112,88,208,0.42), rgba(112,88,208,0.1) 60%, transparent)",
   pointerEvents: "none",
   zIndex: 0,
 });
 
-const HeroStyled = styled(Container, {
+const HeroInner = styled(Container, {
   position: "relative",
   zIndex: 1,
-  minHeight: "calc(100vh - 74px)",
   display: "flex",
-  justifyContent: "space-between",
+  flexDirection: "column",
   alignItems: "center",
-  gap: "40px",
-  padding: "60px 0",
+  textAlign: "center",
+  padding: "84px 0 0",
 
   "@md": {
-    minHeight: "auto",
-    flexDirection: "column",
-    padding: "60px 0 40px",
-    gap: "50px",
-  },
-});
-
-const HeadingContainer = styled("div", {
-  maxWidth: "600px",
-
-  "@md": {
-    textAlign: "center",
-    maxWidth: "100%",
+    padding: "56px 0 0",
   },
 });
 
@@ -62,11 +50,10 @@ const pulse = keyframes({
   "100%": { boxShadow: "0 0 0 0 rgba(52,211,153,0)" },
 });
 
-const LiveBadge = styled("div", {
+const LiveBadge = styled("a", {
   display: "inline-flex",
   alignItems: "center",
   gap: "9px",
-  width: "max-content",
   borderRadius: "999px",
   color: "rgba(255,255,255,0.85)",
   background: "rgba(255,255,255,0.05)",
@@ -75,11 +62,8 @@ const LiveBadge = styled("div", {
   padding: "7px 16px 7px 12px",
   fontSize: "13px",
   fontWeight: 600,
-  marginBottom: "24px",
-
-  "@md": {
-    margin: "0 auto 24px",
-  },
+  textDecoration: "none",
+  marginBottom: "28px",
 });
 
 const LiveDot = styled("span", {
@@ -92,61 +76,43 @@ const LiveDot = styled("span", {
 });
 
 const Heading = styled("h1", {
-  fontSize: "52px",
-  lineHeight: 1.1,
-  userSelect: "none",
+  fontSize: "76px",
+  lineHeight: 1.02,
+  letterSpacing: "-0.03em",
+  color: "#fff",
+  maxWidth: "860px",
 
-  "@lg": {
-    fontSize: "44px",
-  },
-
-  "@md": {
-    fontSize: "38px",
-  },
-
-  "@xs": {
-    fontSize: "32px",
-  },
+  "@lg": { fontSize: "62px" },
+  "@md": { fontSize: "46px" },
+  "@xs": { fontSize: "38px" },
 });
 
-const HeadingPrimary = styled("span", {
-  display: "block",
+const Gradient = styled("span", {
   background:
-    "linear-gradient(270deg, rgb(248, 208, 255) 0%, rgb(255,255,255) 100%, rgb(24, 24, 27) 69.8568%)",
+    "linear-gradient(100deg, #b9a4ff 0%, #f8d0ff 55%, #ffffff 100%)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
 });
 
-const HeadingSecondary = styled("span", {
-  color: "$grayDark12",
-});
-
-const HeadingTertiary = styled("span", {
-  background:
-    "linear-gradient(340deg, rgb(112, 88, 208) 4.08744%, rgb(248, 208, 255) 100%)",
-  WebkitBackgroundClip: "text",
-  WebkitTextFillColor: "transparent",
-});
-
-const HeadingDescription = styled("p", {
-  color: "rgba(255,255,255,0.7)",
-  fontSize: "17px",
+const Lead = styled("p", {
+  color: "rgba(255,255,255,0.68)",
+  fontSize: "19px",
   fontWeight: 500,
-  display: "block",
-  marginTop: "20px",
-  lineHeight: "1.55",
+  lineHeight: 1.55,
+  maxWidth: "620px",
+  marginTop: "24px",
+
+  "@md": { fontSize: "16px" },
 });
 
 const CTARow = styled("div", {
   display: "flex",
+  flexDirection: "column",
   alignItems: "center",
-  gap: "16px",
-  marginTop: "34px",
-  flexWrap: "wrap",
+  gap: "14px",
+  marginTop: "36px",
 
-  "@md": {
-    justifyContent: "center",
-  },
+  "@xs": { width: "100%" },
 });
 
 const FinePrint = styled("span", {
@@ -155,24 +121,52 @@ const FinePrint = styled("span", {
   fontWeight: 500,
 });
 
-const BadgeRow = styled("div", {
+// Phones are cropped at the bottom and faded out so the hero reads as a
+// "peek" into the popup rather than three stacked screenshots.
+const Stage = styled("div", {
+  position: "relative",
+  width: "100%",
+  marginTop: "64px",
+  height: "520px",
+  overflow: "hidden",
   display: "flex",
-  flexWrap: "wrap",
-  gap: "10px",
-  marginTop: "30px",
+  justifyContent: "center",
+  alignItems: "flex-start",
+  gap: "28px",
+  maskImage: "linear-gradient(to bottom, #000 62%, transparent 100%)",
+  WebkitMaskImage: "linear-gradient(to bottom, #000 62%, transparent 100%)",
 
   "@md": {
-    justifyContent: "center",
+    marginTop: "44px",
+    height: "380px",
+    gap: "14px",
   },
 });
 
-const ImageSide = styled("div", {
-  minWidth: "260px",
-  maxWidth: "310px",
+const Phone = styled("div", {
   flexShrink: 0,
+  width: "300px",
 
-  "@md": {
-    maxWidth: "250px",
+  "@lg": { width: "260px" },
+  "@md": { width: "34vw" },
+
+  variants: {
+    pos: {
+      left: {
+        marginTop: "56px",
+        transform: "rotate(-5deg)",
+        "@md": { marginTop: "30px", marginRight: "-6vw" },
+      },
+      center: {
+        zIndex: 2,
+        "@md": { width: "42vw" },
+      },
+      right: {
+        marginTop: "56px",
+        transform: "rotate(5deg)",
+        "@md": { marginTop: "30px", marginLeft: "-6vw" },
+      },
+    },
   },
 });
 
@@ -180,65 +174,76 @@ const Hero = () => {
   return (
     <HeroOuter>
       <Glow />
-      <HeroStyled>
-        <HeadingContainer>
-          <Reveal>
-            <LiveBadge>
-              <LiveDot />
-              Calendario · Live on the Chrome Web Store
-            </LiveBadge>
-          </Reveal>
+      <HeroInner>
+        <Reveal>
+          <LiveBadge href="#showcase">
+            <LiveDot />
+            Live on the Chrome Web Store
+          </LiveBadge>
+        </Reveal>
 
-          <Reveal delay={80}>
-            <Heading>
-              <HeadingPrimary>Every calendar,</HeadingPrimary>
-              <span>
-                <HeadingSecondary>in </HeadingSecondary>
-                <HeadingTertiary>one fast popup.</HeadingTertiary>
-              </span>
-            </Heading>
-          </Reveal>
+        <Reveal delay={80}>
+          <Heading>
+            Every calendar,
+            <br />
+            <Gradient>one fast popup.</Gradient>
+          </Heading>
+        </Reveal>
 
-          <Reveal delay={160}>
-            <HeadingDescription>
-              Calendario merges your Google Calendar and Outlook / Microsoft
-              365 calendar into a single toolbar popup — see what&apos;s next, join
-              a call, or respond to an invite without ever opening either
-              calendar app.
-            </HeadingDescription>
-          </Reveal>
+        <Reveal delay={160}>
+          <Lead>
+            Calendario merges Google Calendar and Outlook / Microsoft 365 into
+            a single toolbar popup, with Zoom connected too. See what&apos;s
+            next, join a call, or respond to an invite without opening any of
+            them.
+          </Lead>
+        </Reveal>
 
-          <Reveal delay={240}>
-            <CTARow>
-              <ExtensionButton />
-              <FinePrint>No account required · Works with Google &amp; Outlook</FinePrint>
-            </CTARow>
-          </Reveal>
+        <Reveal delay={240}>
+          <CTARow>
+            <ExtensionButton />
+            <FinePrint>
+              Free · No account required · Works with Google, Outlook &amp; Zoom
+            </FinePrint>
+          </CTARow>
+        </Reveal>
 
-          <Reveal delay={320}>
-            <BadgeRow>
-              <Badge icon="🔄">Google + Outlook sync</Badge>
-              <Badge icon="🌐">15 languages</Badge>
-              <Badge icon="🎨">7 accent themes</Badge>
-              <Badge icon="🔒">100% client-side</Badge>
-            </BadgeRow>
-          </Reveal>
-        </HeadingContainer>
-
-        <ImageSide>
-          <Reveal delay={200}>
-            <ScreenshotFrame>
-              <Image
-                src={homeLight}
-                alt="Calendario timeline view with a live Now marker and today's meetings"
-                draggable={false}
-                sizes="(min-width: 768px) 310px, 250px"
-                style={{ width: "100%", height: "auto" }}
-              />
-            </ScreenshotFrame>
-          </Reveal>
-        </ImageSide>
-      </HeroStyled>
+        <Reveal delay={320}>
+          <Stage>
+            <Phone pos="left">
+              <PhoneFrame>
+                <Image
+                  src={timelineDark}
+                  alt="Calendario timeline in dark mode"
+                  draggable={false}
+                  sizes="(min-width: 1024px) 300px, 40vw"
+                />
+              </PhoneFrame>
+            </Phone>
+            <Phone pos="center">
+              <PhoneFrame>
+                <Image
+                  src={timelineLight}
+                  alt="Calendario timeline view with a live Now marker and today's meetings"
+                  draggable={false}
+                  priority
+                  sizes="(min-width: 1024px) 300px, 42vw"
+                />
+              </PhoneFrame>
+            </Phone>
+            <Phone pos="right">
+              <PhoneFrame>
+                <Image
+                  src={agendaList}
+                  alt="Calendario agenda list with a Starts in 23m badge and a Join button"
+                  draggable={false}
+                  sizes="(min-width: 1024px) 300px, 40vw"
+                />
+              </PhoneFrame>
+            </Phone>
+          </Stage>
+        </Reveal>
+      </HeroInner>
     </HeroOuter>
   );
 };
